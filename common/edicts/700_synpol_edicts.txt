@@ -1,0 +1,88 @@
+# TODO Cybernetic & Synthetic Assimilation edicts
+# TODO remove potential discretionary and change special project to only update leaders
+
+synpol_cybernetic = {
+    length = -1
+
+    potential = {
+        has_ascension_perk = ap_the_flesh_is_weak
+        NOT = { has_policy_flag = cybernetics_discretionary }
+        NOT = { is_researching_special_project = SYN_POL_CYBERNETICS_PROJECT }
+    }
+
+    effect = {
+        if = {
+            limit = {
+                NOT = { has_country_flag = synpol_cybernetic_active }
+            }
+            set_country_flag = synpol_cybernetic_active
+
+            if = {
+                limit = {
+                    OR = {
+                        has_policy_flag = cybernetics_optional
+                        has_policy_flag = cybernetics_compulsory
+                    }
+                }
+                hidden_effect = {
+                    country_event = { id = synpolutopia.1 }
+                }
+            }
+        }
+        else = {
+            remove_country_flag = synpol_cybernetic_active
+            hidden_effect = {
+                country_event = { id = synpolutopia.2 }
+            }
+        }
+    }
+
+    # TODO edict_cap_usage  = {}
+
+    # TODO ai_weight = {
+
+    # }
+}
+
+synpol_synthetic = {
+    length = -1
+
+    potential = {
+        has_ascension_perk = ap_the_flesh_is_weak #TODO
+        NOT = { has_policy_flag = synthetics_discretionary }
+        NOT = { is_researching_special_project = SYN_POL_SYNTHETICS_PROJECT }
+    }
+
+    effect = {
+        if = {
+            limit = {
+                NOT = { has_country_flag = synpol_synthetic_active }
+            }
+            set_country_flag = synpol_synthetic_active
+
+            if = {
+                limit = {
+                    OR = {
+                        has_policy_flag = synthetics_optional
+                        has_policy_flag = synthetics_compulsory
+                    }
+                }
+                hidden_effect = {
+                    country_event = { id = synpolutopia.3 }
+                }
+            }
+        }
+        else = {
+            remove_country_flag = synpol_synthetic_active
+            hidden_effect = {
+                country_event = { id = synpolutopia.4 }
+            }
+        }
+    }
+
+    # TODO edict_cap_usage  = {}
+
+    # TODO ai_weight = {
+
+    # }
+}

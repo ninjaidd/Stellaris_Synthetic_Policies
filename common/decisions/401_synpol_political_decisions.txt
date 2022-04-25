@@ -1,0 +1,160 @@
+decision_synpol_cybernetic_modification = {
+	owned_planets_only = yes
+	sound = event_administrative_work #TODO
+	icon = decision_politics #TODO
+
+	resources = { #TODO
+		category = decisions
+		cost = {
+			unity = 250
+		}
+	}
+
+	potential = {
+        owner = {
+            has_ascension_perk = ap_the_flesh_is_weak
+            has_policy_flag = cybernetics_discretionary
+        }
+        any_owned_pop = {
+            is_sapient = yes
+            species = {
+                NOR = {
+                    has_trait = trait_cybernetic
+                    has_trait = trait_mechanical
+                    has_trait = trait_machine_unit
+                    has_trait = leader_trait_curator
+                }
+            }
+        }
+	}
+
+	effect = {
+        while = {
+            limit = {
+                any_owned_pop = {
+                    is_sapient = yes
+                    species = {
+                        NOR = {
+                            has_trait = trait_cybernetic
+                            has_trait = trait_mechanical
+                            has_trait = trait_machine_unit
+                            has_trait = leader_trait_curator
+                        }
+                    }
+                }
+            }
+            random_owned_pop = {
+                limit = {
+                    is_sapient = yes
+                    species = {
+                        NOR = {
+                            has_trait = trait_cybernetic
+                            has_trait = trait_mechanical
+                            has_trait = trait_machine_unit
+                            has_trait = leader_trait_curator
+                        }
+                    }
+                }
+                
+                ### FROM create_cybernetic_species_mod
+                species = {
+                    create_species = {
+                        is_mod = yes
+                        name = this
+                        plural = this
+                        class = this
+                        portrait = this
+                        traits = this
+                        can_be_modified = this
+                        homeworld = this
+                        namelist = this
+                        gender = this
+                        traits = {
+                            ideal_planet_class = this
+                            trait = trait_cybernetic
+                        }
+                    }
+                    save_event_target_as = changing_species
+                }
+
+                prev = {
+                    every_owned_pop = {
+                        limit = { is_exact_same_species = event_target:changing_species }
+                        change_species = last_created_species
+                    }
+                }
+                ###
+
+            }
+        }
+        # TODO
+        # every_owned_pop = {
+        #     limit = {
+        #         is_sapient = yes
+        #         species = {
+        #             NOR = {
+        #                 has_trait = trait_cybernetic
+        #                 has_trait = trait_mechanical
+        #                 has_trait = trait_machine_unit
+        #                 has_trait = leader_trait_curator
+        #             }
+        #         }
+        #     }
+        # }
+	}
+
+	# TODO ai_weight = {
+	# 	weight = 5
+	# 	modifier = { # don't enable if you have free housing and no city districts left to build
+	# 		factor = 0
+	# 		OR = {
+	# 			free_housing > 0
+	# 			num_free_districts = {
+	# 				type = any
+	# 				value > 0
+	# 			}
+	# 			has_building_construction = yes #Added since they're probably building housing
+	# 		}
+	# 	}
+	# }
+}
+
+decision_synpol_synthetic_modification = {
+	owned_planets_only = yes
+	sound = event_administrative_work #TODO
+	icon = decision_politics #TODO
+
+	resources = { #TODO
+		category = decisions
+		cost = {
+			unity = 250
+		}
+	}
+
+	potential = {
+        owner = {
+            has_ascension_perk = ap_synpol_synthetic_evolution
+            has_policy_flag = synthetics_discretionary
+        }
+	}
+
+	effect = {
+        # TODO
+        
+	}
+
+	# TODO ai_weight = {
+	# 	weight = 5
+	# 	modifier = { # don't enable if you have free housing and no city districts left to build
+	# 		factor = 0
+	# 		OR = {
+	# 			free_housing > 0
+	# 			num_free_districts = {
+	# 				type = any
+	# 				value > 0
+	# 			}
+	# 			has_building_construction = yes #Added since they're probably building housing
+	# 		}
+	# 	}
+	# }
+}
