@@ -103,3 +103,121 @@ synpol_optional_create_cybernetic_species_mod = {
 		}
 	}
 }
+
+synpol_create_cybernetic_species_mod = {
+	species = {
+		create_species = {
+			is_mod = yes
+			name = this
+			plural = this
+			class = this
+			portrait = this
+			traits = this
+			can_be_modified = this
+			homeworld = this
+			namelist = this
+			gender = this
+			traits = {
+				ideal_planet_class = this
+				trait = trait_cybernetic
+			}
+		}
+		save_event_target_as = changing_species
+	}
+
+	owner = {
+
+        if = {
+            limit = { has_policy_flag = cybernetics_compulsory }
+            every_owned_pop = {
+                limit = { is_exact_same_species = event_target:changing_species }
+                change_species = last_created_species
+            }
+        }
+        else_if = {
+            limit = { has_policy_flag = cybernetics_optional }
+
+            set_variable = {
+                which = cybernetic_number_of_pops_to_modify
+                value = 0
+            }
+
+            every_owned_pop = {
+                limit = { is_exact_same_species = event_target:changing_species }
+                if = {
+                    limit = {
+                        species = {
+                            NOT = { has_species_flag = synpol_done@prev }
+                        }
+                    }
+                    species = {
+                        set_timed_species_flag = {
+                            flag = synpol_done@prev
+                            days = 60
+                        }
+                    }
+                }
+                change_variable = { which = cybernetic_number_of_pops_to_modify value = 1 }
+                if = {
+                    limit = { prev = { has_ethic = "ethic_fanatic_spiritualist" } }
+                    multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.7 }
+                }
+                else_if = {
+                    limit = { prev = { has_ethic = "ethic_spiritualist" } }
+                    multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.75 }
+                }
+                else_if = {
+                    limit = { root = { has_ethic = "ethic_materialist" } }
+                    multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.85 }
+                }
+                else_if = {
+                    limit = { root = { has_ethic = "ethic_fanatic_materialist" } }
+                    multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.9 }
+                }
+                else = {
+                    multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.8 }
+                }
+            }
+
+            while = {
+                limit = {
+                    check_variable = {
+                        which = cybernetic_number_of_pops_to_modify
+                        value > 0
+                    }
+                }
+                random_owned_pop = {
+                    limit = { is_exact_same_species = event_target:changing_species }
+                    change_species = last_created_species
+                }
+                subtract_variable = {
+                    which = number_of_pops_to_modify
+                    value = 1
+                }
+            }
+        }
+
+		every_owned_leader = {
+			limit = { is_exact_same_species = event_target:changing_species }
+			change_species = last_created_species
+		}
+		every_pool_leader = {
+			limit = { is_exact_same_species = event_target:changing_species }
+			change_species = last_created_species
+		}
+		every_owned_army = {
+			limit = {
+				exists = species
+				is_exact_same_species = event_target:changing_species
+			}
+			change_species = last_created_species
+		}
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				is_exact_same_species = event_target:changing_species
+			}
+			change_species = last_created_species
+		}
+	}
+}

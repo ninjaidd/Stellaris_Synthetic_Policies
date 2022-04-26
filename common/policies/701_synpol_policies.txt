@@ -97,6 +97,7 @@ syn_pol_cybernetic_policy = {
                 has_ethic = "ethic_egalitarian"
                 has_ethic = "ethic_fanatic_egalitarian"
             }
+            NOT = { has_policy_flag = synthetics_compulsory}
 		}
 
 		policy_flags = {
@@ -204,6 +205,7 @@ syn_pol_synthetic_policy = {
                 has_ethic = "ethic_egalitarian"
                 has_ethic = "ethic_fanatic_egalitarian"
             }
+            NOT = { has_policy_flag = cybernetics_compulsory}
 		}
 
 		policy_flags = {

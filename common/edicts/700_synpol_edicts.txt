@@ -2,38 +2,17 @@
 # TODO remove potential discretionary and change special project to only update leaders
 
 synpol_cybernetic = {
-    length = -1
+    length = 0
 
     potential = {
-        has_ascension_perk = ap_the_flesh_is_weak
-        NOT = { has_policy_flag = cybernetics_discretionary }
+        has_ascension_perk = ap_synpol_the_flesh_is_weak
         NOT = { is_researching_special_project = SYN_POL_CYBERNETICS_PROJECT }
+        NOT = { has_special_project = "SYN_POL_CYBERNETICS_PROJECT" }
     }
 
     effect = {
-        if = {
-            limit = {
-                NOT = { has_country_flag = synpol_cybernetic_active }
-            }
-            set_country_flag = synpol_cybernetic_active
-
-            if = {
-                limit = {
-                    OR = {
-                        has_policy_flag = cybernetics_optional
-                        has_policy_flag = cybernetics_compulsory
-                    }
-                }
-                hidden_effect = {
-                    country_event = { id = synpolutopia.1 }
-                }
-            }
-        }
-        else = {
-            remove_country_flag = synpol_cybernetic_active
-            hidden_effect = {
-                country_event = { id = synpolutopia.2 }
-            }
+        hidden_effect = {
+            country_event = { id = synpolutopia.1 }
         }
     }
 
@@ -48,35 +27,14 @@ synpol_synthetic = {
     length = -1
 
     potential = {
-        has_ascension_perk = ap_the_flesh_is_weak #TODO
-        NOT = { has_policy_flag = synthetics_discretionary }
+        has_ascension_perk = ap_synpol_synthetic_evolution
+        NOT = { is_researching_special_project = SYN_POL_SYNTHETICS_PROJECT }
         NOT = { is_researching_special_project = SYN_POL_SYNTHETICS_PROJECT }
     }
 
     effect = {
-        if = {
-            limit = {
-                NOT = { has_country_flag = synpol_synthetic_active }
-            }
-            set_country_flag = synpol_synthetic_active
-
-            if = {
-                limit = {
-                    OR = {
-                        has_policy_flag = synthetics_optional
-                        has_policy_flag = synthetics_compulsory
-                    }
-                }
-                hidden_effect = {
-                    country_event = { id = synpolutopia.3 }
-                }
-            }
-        }
-        else = {
-            remove_country_flag = synpol_synthetic_active
-            hidden_effect = {
-                country_event = { id = synpolutopia.4 }
-            }
+        hidden_effect = {
+            country_event = { id = synpolutopia.3 }
         }
     }
 

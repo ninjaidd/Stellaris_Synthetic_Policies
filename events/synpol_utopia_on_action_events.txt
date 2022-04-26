@@ -60,7 +60,7 @@ country_event = {
 		hidden_effect = { save_event_target_as = synth_evo_owner }
 		capital_scope = {
 			enable_special_project = {
-				type = SYN_POL_SYNTHETICS_PROJECT
+				name = SYN_POL_SYNTHETICS_PROJECT
 				location = this
 				owner = root
 			}
@@ -83,7 +83,7 @@ country_event = {
 		name = "synpolutopia.4.a"
 		# hidden_effect = { save_event_target_as = synth_evo_owner }
 		abort_special_project = {
-			name = "SYN_POL_SYNTHETICS_PROJECT"
+			type = "SYN_POL_SYNTHETICS_PROJECT"
 		}
 	}
 }
@@ -121,7 +121,39 @@ country_event = {
 		}
 		change_dominant_species = { species = event_target:new_main_species }
 
-		# if not discretionary modify pops
+		##################
+
+		while = {
+			limit = {
+				any_owned_pop = {
+					is_sapient = yes
+					species = {
+						NOR = {
+							has_trait = trait_cybernetic
+							has_trait = trait_mechanical
+							has_trait = trait_machine_unit
+							has_trait = leader_trait_curator
+						}
+					}
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_sapient = yes
+					species = {
+						NOR = {
+							has_trait = trait_cybernetic
+							has_trait = trait_mechanical
+							has_trait = trait_machine_unit
+							has_trait = leader_trait_curator
+						}
+					}
+				}
+				synpol_create_cybernetic_species_mod = yes
+			}
+		}
+
+		################## if not discretionary modify pops
 		
 		if = { # NO CHANGES IF CYBERNETICS POLICY IS COMPULSORY
 			limit = {
@@ -168,7 +200,7 @@ country_event = {
 								has_trait = trait_mechanical
 								has_trait = trait_machine_unit
 								has_trait = leader_trait_curator
-								has_species_flag = synpolutopia_done
+								has_species_flag = synpol_done
 							}
 						}
 					}
@@ -182,11 +214,11 @@ country_event = {
 								has_trait = trait_mechanical
 								has_trait = trait_machine_unit
 								has_trait = leader_trait_curator
-								has_species_flag = synpolutopia_done@root
+								has_species_flag = synpol_done@root
 							}
 						}
 					}
-					synpolutopia_optional_create_cybernetic_species_mod = yes
+					synpol_optional_create_cybernetic_species_mod = yes
 				}
 			}
 		}
@@ -228,7 +260,7 @@ country_event = {
 		# 			create_cybernetic_species_mod = yes
 		# 		}
 		# 		else = { # ASSUMES CYBERNETICS POLICY IS OPTIONAL
-		# 			synpolutopia_create_cybernetic_species_mod = yes
+		# 			synpol_create_cybernetic_species_mod = yes
 		# 		}				
 		# 	}
 		# }
