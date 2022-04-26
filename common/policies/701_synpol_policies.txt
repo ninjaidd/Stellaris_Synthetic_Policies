@@ -3,7 +3,7 @@ syn_pol_cybernetic_policy = {
 
 	potential = {
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-        has_ascension_perk = ap_the_flesh_is_weak
+        has_ascension_perk = ap_synpol_the_flesh_is_weak
         NOT = { has_country_flag = flesh_weakened }
 	}
 

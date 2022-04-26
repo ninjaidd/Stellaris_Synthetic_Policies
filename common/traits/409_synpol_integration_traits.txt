@@ -1,4 +1,5 @@
 trait_robot_uploaded = {
+    icon = "gfx/interface/icons/traits/trait_unknown.dds"
     cost = 0
     sorting_priority = 20
   

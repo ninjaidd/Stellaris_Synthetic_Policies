@@ -25,7 +25,7 @@ country_event = {
 	}
 }
 
-# Cybernetic Complete
+# Cybernetic Project Complete
 # Replaces utopia.2501
 country_event = {
 	id = synpolutopia.2
@@ -338,7 +338,7 @@ country_event = {
 	}
 }
 
-# Synthetic Complete
+# Synthetic Project Complete
 # Replaces utopia.2551
 country_event = {
 	id = synpolutopia.4
@@ -488,19 +488,19 @@ country_event = {
 			}
 
 			if = {
-                limit = { prev = { has_ethic = "ethic_fanatic_spiritualist" } }
+                limit = { has_ethic = "ethic_fanatic_spiritualist" }
                 multiply_variable  = { which = synthetic_number_of_pops_to_modify value = 0.7 }
             }
             else_if = {
-                limit = { prev = { has_ethic = "ethic_spiritualist" } }
+                limit = { has_ethic = "ethic_spiritualist" }
                 multiply_variable  = { which = synthetic_number_of_pops_to_modify value = 0.75 }
             }
             else_if = {
-                limit = { root = { has_ethic = "ethic_materialist" } }
+                limit = { has_ethic = "ethic_materialist" }
                 multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.85 }
             }
             else_if = {
-                limit = { root = { has_ethic = "ethic_fanatic_materialist" } }
+                limit = { has_ethic = "ethic_fanatic_materialist" }
                 multiply_variable  = { which = synthetic_number_of_pops_to_modify value = 0.9 }
             }
             else = {

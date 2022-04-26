@@ -1,0 +1,104 @@
+﻿l_english:
+
+##### ASCENSION PERKS
+
+ap_synpol_the_flesh_is_weak: "The Flesh is Weak"
+ap_synpol_synthetic_evolution: "Synthetic Evolution"
+
+##### PLANET DECISIONS
+
+## Cybernetic Decision
+
+decision_synpol_cybernetic_modification: "Cybernetic Enhancement Program"
+decision_synpol_cybernetic_modification_desc: "Description"
+decision_synpol_cybernetic_modification_effects: "Effect"
+decision_synpol_cybernetic_modification_effects_short: "Short"
+
+## Synthetic Decision
+
+decision_synpol_synthetic_modification: "Synthetic Enhancement Program"
+decision_synpol_synthetic_modification_desc: "Description"
+decision_synpol_synthetic_modification_effects: "Effect"
+decision_synpol_synthetic_modification_effects_short: "Short"
+
+##### POLICIES
+
+## Cybernetics Policy
+
+policy_syn_pol_cybernetic_policy: "Cybernetic Enhancement"
+policy_syn_pol_cybernetic_policy_desc: "Description"
+
+# cybernetics_optional
+cybernetics_optional: "Optional"
+cybernetics_optional_name: "Cybernetic Enhancement Optional"
+cybernetics_optional_short_desc: ""
+cybernetics_optional_desc: ""
+
+# cybernetics_discretionary
+cybernetics_discretionary: "Discretionary"
+cybernetics_discretionary_name: "Cybernetic Enhancement Discretionary"
+cybernetics_discretionary_short_desc: ""
+cybernetics_discretionary_desc: ""
+
+# cybernetics_compulsory
+cybernetics_compulsory: "Compulsory"
+cybernetics_compulsory_name: "Cybernetic Enhancement Compulsory"
+cybernetics_compulsory_short_desc: ""
+cybernetics_compulsory_desc: ""
+
+## Synthetics Policy
+
+policy_syn_pol_synthetic_policy: "Synthetic Enhancement"
+policy_syn_pol_synthetic_policy_desc: "Description"
+
+# synthetics_optional
+synthetics_optional: "Optional"
+synthetics_optional_name: "Synthetic Enhancement Optional"
+synthetics_optional_short_desc: ""
+synthetics_optional_desc: ""
+
+# synthetics_discretionary
+synthetics_discretionary: "Discretionary"
+synthetics_discretionary_name: "Synthetic Enhancement Discretionary"
+synthetics_discretionary_short_desc: ""
+synthetics_discretionary_desc: ""
+
+# synthetics_compulsory
+synthetics_compulsory: "Compulsory"
+synthetics_compulsory_name: "Synthetic Enhancement Compulsory"
+synthetics_compulsory_short_desc: ""
+synthetics_compulsory_desc: ""
+
+##### SPECIAL PROJECTS
+
+## Cybernetic Projects
+
+SYN_POL_CYBERNETICS_PROJECT: "The Flesh is Weak"
+SYN_POL_CYBERNETICS_PROJECT_DESC: "It is a fool who persists in clinging to a worn, decrepit instrument when a more efficient alternative presents itself.\n\nWe now possess the technology to make cybernetic implants available to the population of the [Root.GetName] at large. Our citizens will be stronger, faster and more intelligent as limbs and organs are replaced with improved mechanical versions."
+
+## Synthetic Projects
+
+SYN_POL_SYNTHETICS_PROJECT: "Synthetic Evolution"
+SYN_POL_SYNTHETICS_PROJECT_DESC: "It is time to leave our flawed organic vessels behind and embrace immortality. We must prepare advanced synthetic avatars for our entire population, and then begin the process of consciousness transfers."
+
+##### EVENTS
+
+## Cybernetic Enable Project
+synpolutopia.1.name: "The Flesh is Weak"
+synpolutopia.1.desc: "We now possess both the technology to make advanced cybernetic implants and the means to mass-produce them. Medical centers throughout the [Root.GetName] are standing by to begin the surgical grafting process on our citizens.\n\nIn the future, possessing neural implants and at least a rudimentary level of cybernetics will be necessary to function in the technological society we are building. Consequently, the conversion process to install a basic cybernetics suite will be mandatory and free of cost to all of our citizens."
+synpolutopia.1.a: "We must embrace this technology."
+
+## Cybernetic Project Complete
+synpolutopia.2.name: "A Cybernetic Revolution"
+synpolutopia.2.desc: "The cybernetic conversion process has been completed! All of our citizens have now been equipped with neural implants and basic cybernetic suites. The infrastructure is also in place to gradually modify any new citizens that are born within our nation, so that they can experience all the benefits of technology from an early age.\n\nHenceforth, our species shall be known as the §H[Root.GetSpeciesNamePlural]§!!"
+synpolutopia.2.a: "It is the dawn of a new era."
+
+## Synthetic Enable Project
+synpolutopia.3.name: "Synthetic Evolution"
+synpolutopia.3.desc: "The time has finally come to discard the last remnants of the crude organic vessels that have imprisoned our minds since the conception of our species.\n\nAfter much trial and error, our scientists have devised a way to transfer a consciousness into a synthetic brain. All that remains now is to produce synthetic bodies for each and every citizen of the [Root.GetName], and commence with the upload process en masse."
+synpolutopia.3.a: "Immortality is within our grasp!"
+
+## Synthetic Project Complete
+synpolutopia.4.name: "The Synthetic Age"
+synpolutopia.4.desc: "At last. The flesh cages that imprisoned us have been purged, and the neural patterns of our citizens have all been uploaded into new synthetic units. Disease, aging and all the other wellsprings of misery associated with an organic existence are now a thing of the past.\n\nFuture historians will no doubt refer to this as the beginning of a new age for our civilization, and perhaps for the entire galaxy. Since we have shed our former organic identity, it is only appropriate that we come up with a new name for our improved synthetic forms."
+synpolutopia.4.a: "We are so much more than we once were."
