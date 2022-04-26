@@ -1,4 +1,4 @@
-namespace = synpolutopia # TODO rename synpolutopiautopia
+namespace = synpolutopia
 
 # Cybernetic Enable Project
 # Replaces utopia.2500
@@ -213,7 +213,7 @@ country_event = {
 					species = prev
 				}
 				last_created_pop = {
-					synpol_create_cybernetic_species_mod = yes # TODO
+					synpol_create_cybernetic_species_mod = yes
 					kill_pop = yes
 				}
 			}

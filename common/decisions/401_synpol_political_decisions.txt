@@ -82,7 +82,7 @@ decision_synpol_cybernetic_modification = {
                     save_event_target_as = changing_species
                 }
 
-                prev = { # TODO country scope??
+                owner = { # TODO country scope??
                     every_owned_pop = {
                         limit = { is_exact_same_species = event_target:changing_species }
                         change_species = last_created_species
@@ -134,7 +134,7 @@ decision_synpol_synthetic_modification = {
 	effect = {
         every_galaxy_species = {
             limit = {
-                has_species_flag = synth_for@root # TODO country scope??
+                has_species_flag = synth_for@prev.owner #root # TODO country scope??
             }
             save_event_target_as = synth_species
         }
@@ -155,10 +155,10 @@ decision_synpol_synthetic_modification = {
                 save_event_target_as = changing_species
             }
 
-            prev = { # TODO country scope??
+            owner = { # TODO country scope??
                 every_owned_pop = {
                     limit = { is_exact_same_species = event_target:changing_species }
-                    change_species = synth_species # TODO check if synth_species is null
+                    change_species = synth_species
                 }
             }
         }

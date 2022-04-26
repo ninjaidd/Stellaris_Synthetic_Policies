@@ -1,5 +1,3 @@
-# TODO Resolutions in_breach_of
-
 # Cybernetics Policy
 syn_pol_cybernetic_policy = {
 
