@@ -1,6 +1,7 @@
 namespace = synpolutopia # TODO rename synpolutopiautopia
 
 # Cybernetic Enable Project
+# Replaces utopia.2500
 country_event = {
 	id = synpolutopia.1
 	title = "synpolutopia.1.name"
@@ -25,6 +26,7 @@ country_event = {
 }
 
 # Cybernetic Complete
+# Replaces utopia.2501
 country_event = {
 	id = synpolutopia.2
 	title = "synpolutopia.2.name"
@@ -44,20 +46,18 @@ country_event = {
 			}
 			random_owned_pop = {
 				limit = { is_exact_same_species = root }
-				create_cybernetic_species_mod = yes
+				synpol_create_cybernetic_species_mod = yes
 				species = { save_event_target_as = new_main_species }
 			}
 		}
 		else = {
 			random_owned_pop = {
 				limit = { is_same_species = root }
-				create_cybernetic_species_mod = yes
+				synpol_create_cybernetic_species_mod = yes
 				species = { save_event_target_as = new_main_species }
 			}
 		}
 		change_dominant_species = { species = event_target:new_main_species }
-
-		##################
 
 		while = {
 			limit = {
@@ -69,6 +69,7 @@ country_event = {
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
+							has_species_flag = synpol_done
 						}
 					}
 				}
@@ -82,233 +83,13 @@ country_event = {
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
+							has_species_flag = synpol_done@root
 						}
 					}
 				}
 				synpol_create_cybernetic_species_mod = yes
 			}
 		}
-
-		################## if not discretionary modify pops
-		
-		if = { # NO CHANGES IF CYBERNETICS POLICY IS COMPULSORY
-			limit = {
-				has_policy_flag = cybernetics_compulsory
-			}
-			while = {
-				limit = {
-					any_owned_pop = {
-						is_sapient = yes
-						species = {
-							NOR = {
-								has_trait = trait_cybernetic
-								has_trait = trait_mechanical
-								has_trait = trait_machine_unit
-								has_trait = leader_trait_curator
-							}
-						}
-					}
-				}
-				random_owned_pop = {
-					limit = {
-						is_sapient = yes
-						species = {
-							NOR = {
-								has_trait = trait_cybernetic
-								has_trait = trait_mechanical
-								has_trait = trait_machine_unit
-								has_trait = leader_trait_curator
-							}
-						}
-					}
-					create_cybernetic_species_mod = yes
-				}
-			}
-		}
-		else = { # ASSUMES CYBERNETICS POLICY IS OPTIONAL
-			while = {
-				limit = {
-					any_owned_pop = {
-						is_sapient = yes
-						species = {
-							NOR = {
-								has_trait = trait_cybernetic
-								has_trait = trait_mechanical
-								has_trait = trait_machine_unit
-								has_trait = leader_trait_curator
-								has_species_flag = synpol_done
-							}
-						}
-					}
-				}
-				random_owned_pop = {
-					limit = {
-						is_sapient = yes
-						species = {
-							NOR = {
-								has_trait = trait_cybernetic
-								has_trait = trait_mechanical
-								has_trait = trait_machine_unit
-								has_trait = leader_trait_curator
-								has_species_flag = synpol_done@root
-							}
-						}
-					}
-					synpol_optional_create_cybernetic_species_mod = yes
-				}
-			}
-		}
-
-
-
-
-		# while = {
-		# 	limit = {
-		# 		any_owned_pop = {
-		# 			is_sapient = yes
-		# 			species = {
-		# 				NOR = {
-		# 					has_trait = trait_cybernetic
-		# 					has_trait = trait_mechanical
-		# 					has_trait = trait_machine_unit
-		# 					has_trait = leader_trait_curator
-		# 				}
-		# 			}
-		# 		}
-		# 	}
-		# 	random_owned_pop = {
-		# 		limit = {
-		# 			is_sapient = yes
-		# 			species = {
-		# 				NOR = {
-		# 					has_trait = trait_cybernetic
-		# 					has_trait = trait_mechanical
-		# 					has_trait = trait_machine_unit
-		# 					has_trait = leader_trait_curator
-		# 				}
-		# 			}
-		# 		}
-
-		# 		if = { # NO CHANGES IF CYBERNETICS POLICY IS COMPULSORY
-		# 			limit = {
-		# 				has_policy_flag = cybernetics_compulsory
-		# 			}
-		# 			create_cybernetic_species_mod = yes
-		# 		}
-		# 		else = { # ASSUMES CYBERNETICS POLICY IS OPTIONAL
-		# 			synpol_create_cybernetic_species_mod = yes
-		# 		}				
-		# 	}
-		# }
-
-		# if = { # NO CHANGES IF CYBERNETICS POLICY IS COMPULSORY
-		# 	limit = {
-		# 		has_policy_flag = cybernetics_compulsory
-		# 	}
-		
-		# 	while = {
-		# 		limit = {
-		# 			any_owned_pop = {
-		# 				is_sapient = yes
-		# 				species = {
-		# 					NOR = {
-		# 						has_trait = trait_cybernetic
-		# 						has_trait = trait_mechanical
-		# 						has_trait = trait_machine_unit
-		# 						has_trait = leader_trait_curator
-		# 					}
-		# 				}
-		# 			}
-		# 		}
-		# 		random_owned_pop = {
-		# 			limit = {
-		# 				is_sapient = yes
-		# 				species = {
-		# 					NOR = {
-		# 						has_trait = trait_cybernetic
-		# 						has_trait = trait_mechanical
-		# 						has_trait = trait_machine_unit
-		# 						has_trait = leader_trait_curator
-		# 					}
-		# 				}
-		# 			}
-		# 			create_cybernetic_species_mod = yes
-		# 		}
-		# 	}
-		# }
-		# else = { # ASSUMES CYBERNETICS POLICY IS OPTIONAL
-		# 	set_variable = {
-		# 		which = cybernetic_number_of_pops_to_modify
-		# 		value = 0
-		# 	}
-
-		# 	every_owned_pop = {
-		# 		limit = {
-		# 			is_sapient = yes
-		# 			species = {
-		# 				NOR = {
-		# 					has_trait = trait_cybernetic
-		# 					has_trait = trait_mechanical
-		# 					has_trait = trait_machine_unit
-		# 					has_trait = leader_trait_curator
-		# 				}
-		# 			}
-		# 		}
-		# 		change_variable = { which = cybernetic_number_of_pops_to_modify value = 1 }
-		# 	}
-
-		# 	if = {
-		# 		limit = {
-		# 			root = { has_ethic = "ethic_fanatic_spiritualist" }
-		# 		}
-		# 		multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.7 }
-		# 	}
-		# 	else_if = {
-		# 		limit = {
-		# 			root = { has_ethic = "ethic_spiritualist" }
-		# 		}
-		# 		multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.75 }
-		# 	}
-		# 	else_if = {
-		# 		limit = {
-		# 			root = { has_ethic = "ethic_materialist" }
-		# 		}
-		# 		multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.85 }
-		# 	}
-		# 	else_if = {
-		# 		limit = {
-		# 			root = { has_ethic = "ethic_fanatic_materialist" }
-		# 		}
-		# 		multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.9 }
-		# 	}
-		# 	else = {
-		# 		multiply_variable  = { which = cybernetic_number_of_pops_to_modify value = 0.8 }
-		# 	}
-
-		# 	while = {
-		# 		limit = {
-		# 			check_variable = {
-		# 				which = cybernetic_number_of_pops_to_modify
-		# 				value > 0
-		# 			}
-		# 		}
-		# 		random_owned_pop = {
-		# 			limit = {
-		# 				is_sapient = yes
-		# 				species = {
-		# 					NOR = {
-		# 						has_trait = trait_cybernetic
-		# 						has_trait = trait_mechanical
-		# 						has_trait = trait_machine_unit
-		# 						has_trait = leader_trait_curator
-		# 					}
-		# 				}
-		# 			}
-		# 			create_cybernetic_species_mod = yes #TODO BROKEN
-		# 		}
-		# 		subtract_variable = { which = number_of_pops_to_modify value = 1}
-		# 	}
-		# }
 
 		while = {
 			limit = {
@@ -373,7 +154,7 @@ country_event = {
 						species = prev
 					}
 					last_created_pop = {
-						create_cybernetic_species_mod = yes
+						synpol_create_cybernetic_species_mod = yes
 						kill_pop = yes
 					}
 				}
@@ -409,7 +190,7 @@ country_event = {
 						species = prev.species
 					}
 					last_created_pop = {
-						create_cybernetic_species_mod = yes
+						synpol_create_cybernetic_species_mod = yes
 						kill_pop = yes
 					}
 				}
@@ -432,7 +213,7 @@ country_event = {
 					species = prev
 				}
 				last_created_pop = {
-					create_cybernetic_species_mod = yes # TODO
+					synpol_create_cybernetic_species_mod = yes # TODO
 					kill_pop = yes
 				}
 			}
@@ -669,7 +450,11 @@ country_event = {
 			}
 		}
 
-		if = { # NO CHANGES IF SYNTHETICS POLICY IS COMPULSORY
+		# If policy is complusory update all pops
+        # Else if policy is optional update some pops
+		# Skip pop updating if policy is discretionary
+		
+		if = {
 			limit = {
 				has_policy_flag = synthetics_compulsory
 			}
@@ -682,7 +467,8 @@ country_event = {
 				change_species = event_target:new_robotic_species
 			}
 		}
-		else = { # ASSUMES SYNTHETICS POLICY IS OPTIONAL
+		else_if = {
+			limit = { has_policy_flag = synthetics_optional }
 			set_variable = {
 				which = synthetic_number_of_pops_to_modify
 				value = 0

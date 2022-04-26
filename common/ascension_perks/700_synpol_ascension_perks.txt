@@ -7,6 +7,7 @@ ap_synpol_the_flesh_is_weak = {
     on_enabled = {
 		custom_tooltip = "flesh_is_weak_tooltip"
 		hidden_effect = {
+            # Calls synpolutopia.1 instead of utopia.2500
 			country_event = { id = synpolutopia.1 }
 		}
 	}
@@ -44,7 +45,7 @@ ap_synpol_the_flesh_is_weak = {
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
-			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_synpol_the_flesh_is_weak
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
@@ -106,6 +107,7 @@ ap_synpol_synthetic_evolution = {
 			custom_tooltip = disables_idyllic_bloom
 		}
 		hidden_effect = {
+            # Calls synpolutopia.3 instead of utopia.2550
 			country_event = { id = synpolutopia.3 }
 		}
 	}
@@ -137,11 +139,11 @@ ap_synpol_synthetic_evolution = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_ap_the_flesh_is_weak"
-			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = synpol_create_cybernetic_species_mod
 		}
 		custom_tooltip = {
 			fail_text = "requires_finished_cybernetics_project"
-			NOT = { has_special_project = FLESH_IS_WEAK_PROJECT }
+			NOT = { has_special_project = SYN_POL_CYBERNETICS_PROJECT }
 		}
 	}
 
