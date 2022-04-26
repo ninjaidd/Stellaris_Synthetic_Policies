@@ -23,7 +23,7 @@ special_project = {
 
 	on_success = {
 		event_target:synth_evo_owner = {
-			country_event = { id = synpolutopia.5 }
+			country_event = { id = synpolutopia.2 }
 		}
 	}
 
@@ -54,7 +54,7 @@ special_project = {
 
 	on_success = {
 		event_target:synth_evo_owner = {
-			country_event = { id = synpolutopia.6 }
+			country_event = { id = synpolutopia.4 }
 		}
 	}
 
