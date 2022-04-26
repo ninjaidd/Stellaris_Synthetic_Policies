@@ -29,7 +29,7 @@ synpol_create_cybernetic_species_mod = {
 
         # If policy is complusory update all pops
         # Else if policy is optional update some pops
-        # Else if policy is discretionary do not update pops
+        # Skip pop updating if policy is discretionary
 
         if = {
             limit = { has_policy_flag = cybernetics_compulsory }

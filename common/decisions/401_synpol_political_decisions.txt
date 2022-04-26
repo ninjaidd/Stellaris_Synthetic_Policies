@@ -12,8 +12,13 @@ decision_synpol_cybernetic_modification = {
 
 	potential = {
         owner = {
+            NOT = { has_ethic = ethic_gestalt_consciousness }
             has_ascension_perk = ap_the_flesh_is_weak
-            has_policy_flag = cybernetics_discretionary
+            has_country_flag = flesh_weakened
+            NOR = {
+                has_ethic = "ethic_egalitarian"
+                has_ethic = "ethic_fanatic_egalitarian"
+            }
         }
         any_owned_pop = {
             is_sapient = yes
@@ -56,7 +61,7 @@ decision_synpol_cybernetic_modification = {
                     }
                 }
                 
-                ### FROM create_cybernetic_species_mod
+                # From common/scripted_effects/00_scripted_effects.txt > create_cybernetic_species_mod 
                 species = {
                     create_species = {
                         is_mod = yes
@@ -77,30 +82,15 @@ decision_synpol_cybernetic_modification = {
                     save_event_target_as = changing_species
                 }
 
-                prev = {
+                prev = { # TODO country scope??
                     every_owned_pop = {
                         limit = { is_exact_same_species = event_target:changing_species }
                         change_species = last_created_species
                     }
                 }
-                ###
 
             }
         }
-        # TODO
-        # every_owned_pop = {
-        #     limit = {
-        #         is_sapient = yes
-        #         species = {
-        #             NOR = {
-        #                 has_trait = trait_cybernetic
-        #                 has_trait = trait_mechanical
-        #                 has_trait = trait_machine_unit
-        #                 has_trait = leader_trait_curator
-        #             }
-        #         }
-        #     }
-        # }
 	}
 
 	# TODO ai_weight = {
@@ -133,14 +123,62 @@ decision_synpol_synthetic_modification = {
 
 	potential = {
         owner = {
+            NOT = { has_ethic = ethic_gestalt_consciousness }
             has_ascension_perk = ap_synpol_synthetic_evolution
-            has_policy_flag = synthetics_discretionary
+            has_country_flag = synthetic_empire
+            NOR = {
+                has_ethic = "ethic_egalitarian"
+                has_ethic = "ethic_fanatic_egalitarian"
+            }
+        }
+        any_owned_pop = {
+            is_sapient = yes
+            species = {
+                has_trait = trait_cybernetic
+                NOR = {
+                    has_trait = trait_mechanical
+                    has_trait = trait_machine_unit
+                    has_trait = leader_trait_curator
+                }
+            }
         }
 	}
 
 	effect = {
+        every_galaxy_species = {
+            limit = {
+                has_species_flag = synth_for@root # TODO country scope??
+            }
+            save_event_target_as = synth_species
+        }
+
+        random_owned_pop = {
+            limit = {
+                is_sapient = yes
+                species = {
+                    has_trait = trait_cybernetic
+                    NOR = {
+                        has_trait = trait_mechanical
+                        has_trait = trait_machine_unit
+                        has_trait = leader_trait_curator
+                    }
+                }
+            }
+            species = {
+                save_event_target_as = changing_species
+            }
+
+            prev = { # TODO country scope??
+                every_owned_pop = {
+                    limit = { is_exact_same_species = event_target:changing_species }
+                    change_species = synth_species # TODO check if synth_species is null
+                }
+            }
+        }
+
+        # TODO From events/utopia_on_action_events.txt > utopia.2550
+
         # TODO
-        
 	}
 
 	# TODO ai_weight = {

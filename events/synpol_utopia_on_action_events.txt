@@ -314,6 +314,7 @@ country_event = {
 }
 
 # Synthetic Enable Project
+# Replaces utopia.2550
 country_event = {
 	id = synpolutopia.3
 	title = "synpolutopia.3.name"
@@ -338,6 +339,7 @@ country_event = {
 }
 
 # Synthetic Complete
+# Replaces utopia.2551
 country_event = {
 	id = synpolutopia.4
 	title = "synpolutopia.4.name"
@@ -435,6 +437,7 @@ country_event = {
 								name_list = ascension_list
 							}
 							save_event_target_as = new_robotic_species
+							set_species_flag = synth_for@root ### UPDATED Flag species for use in planetary decision
 						}
 					}
 				}
@@ -446,6 +449,7 @@ country_event = {
 					}
 	
 					save_event_target_as = new_robotic_species
+					set_species_flag = synth_for@root ### UPDATED Flag species for use in planetary decision
 				}
 			}
 		}
