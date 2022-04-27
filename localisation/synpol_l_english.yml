@@ -8,22 +8,6 @@ ap_synpol_the_flesh_is_weak_desc: "The limits and constraints imposed on us by o
 ap_synpol_synthetic_evolution: "Synthetic Evolution"
 ap_synpol_synthetic_evolution_desc: "It is time to abandon the flawed organic vessels that imprison our minds. By transferring our neural patterns into synthetic bodies, we will achieve a higher state of being."
 
-##### PLANET DECISIONS
-
-## Cybernetic Decision
-
-decision_synpol_cybernetic_modification: "Cybernetic Enhancement Program"
-decision_synpol_cybernetic_modification_desc: "Description"
-decision_synpol_cybernetic_modification_effects: "Effect"
-decision_synpol_cybernetic_modification_effects_short: "Short"
-
-## Synthetic Decision
-
-decision_synpol_synthetic_modification: "Synthetic Enhancement Program"
-decision_synpol_synthetic_modification_desc: "Description"
-decision_synpol_synthetic_modification_effects: "Effect"
-decision_synpol_synthetic_modification_effects_short: "Short"
-
 ##### POLICIES
 
 ## Cybernetics Policy
