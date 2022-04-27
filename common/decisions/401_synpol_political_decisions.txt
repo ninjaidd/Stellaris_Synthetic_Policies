@@ -1,3 +1,4 @@
+#TODO custom tooltip
 decision_synpol_cybernetic_modification = {
 	owned_planets_only = yes
 	sound = event_the_flesh_is_weak

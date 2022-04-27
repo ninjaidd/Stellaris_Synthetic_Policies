@@ -1,11 +1,11 @@
 spriteTypes = {
     spriteType = {
 		name = "GFX_ap_synpol_the_flesh_is_weak"
-		textureFile = "gfx/interface/icons/traditions/ap_the_flesh_is_weak.dds"
+		textureFile = "gfx/interface/icons/ascension_perks/ap_the_flesh_is_weak.dds"
 	}
     
     spriteType = {
 		name = "GFX_ap_synpol_synthetic_evolution"
-		textureFile = "gfx/interface/icons/traditions/ap_synthetic_evolution.dds"
+		textureFile = "gfx/interface/icons/ascension_perks/ap_synthetic_evolution.dds"
 	}
 }
