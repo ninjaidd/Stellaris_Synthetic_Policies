@@ -1,4 +1,4 @@
-#TODO custom tooltip
+#TODO custom tooltips
 decision_synpol_cybernetic_modification = {
 	owned_planets_only = yes
 	sound = event_the_flesh_is_weak
@@ -7,7 +7,7 @@ decision_synpol_cybernetic_modification = {
 	resources = {
 		category = decisions
 		cost = {
-			unity = 50
+			energy = 500
 		}
 	}
 
@@ -16,10 +16,6 @@ decision_synpol_cybernetic_modification = {
             NOT = { has_ethic = ethic_gestalt_consciousness }
             has_ascension_perk = ap_synpol_the_flesh_is_weak
             has_country_flag = flesh_weakened
-            NOR = {
-                has_ethic = "ethic_egalitarian"
-                has_ethic = "ethic_fanatic_egalitarian"
-            }
         }
         any_owned_pop = {
             is_sapient = yes
@@ -83,7 +79,7 @@ decision_synpol_cybernetic_modification = {
                     save_event_target_as = changing_species
                 }
 
-                owner = { # TODO country scope??
+                owner = { # TODO scope??
                     every_owned_pop = {
                         limit = { is_exact_same_species = event_target:changing_species }
                         change_species = last_created_species
@@ -105,7 +101,7 @@ decision_synpol_synthetic_modification = {
 	resources = {
 		category = decisions
 		cost = {
-			unity = 50
+			energy = 500
 		}
 	}
 
@@ -114,10 +110,6 @@ decision_synpol_synthetic_modification = {
             NOT = { has_ethic = ethic_gestalt_consciousness }
             has_ascension_perk = ap_synpol_synthetic_evolution
             has_country_flag = synthetic_empire
-            NOR = {
-                has_ethic = "ethic_egalitarian"
-                has_ethic = "ethic_fanatic_egalitarian"
-            }
         }
         any_owned_pop = {
             is_sapient = yes
@@ -135,7 +127,7 @@ decision_synpol_synthetic_modification = {
 	effect = {
         every_galaxy_species = {
             limit = {
-                has_species_flag = synth_for@prev.owner #root # TODO country scope??
+                has_species_flag = synth_for@prev.owner #root # TODO scope??
             }
             save_event_target_as = synth_species
         }
@@ -156,7 +148,7 @@ decision_synpol_synthetic_modification = {
                 save_event_target_as = changing_species
             }
 
-            owner = { # TODO country scope??
+            owner = { # TODO scope??
                 every_owned_pop = {
                     limit = { is_exact_same_species = event_target:changing_species }
                     change_species = synth_species
