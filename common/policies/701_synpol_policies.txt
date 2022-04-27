@@ -1,3 +1,5 @@
+#TODO review assimilation rules (egal limiting?)
+
 # Cybernetics Policy
 syn_pol_cybernetic_policy = {
 
