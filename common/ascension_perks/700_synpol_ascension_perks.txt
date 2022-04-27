@@ -1,5 +1,5 @@
 # The Flesh Is Weak
-ap_synpol_the_flesh_is_weak = {
+ap_the_flesh_is_weak = {
     potential = { always = no }
 }
 
@@ -72,7 +72,7 @@ ap_synpol_the_flesh_is_weak = {
 }
 
 # Synthetic Evolution
-ap_synpol_synthetic_evolution = {
+ap_synthetic_evolution = {
     potential = { always = no }
 }
 
@@ -138,7 +138,7 @@ ap_synpol_synthetic_evolution = {
 			has_technology = tech_synthetic_leaders
 		}
 		custom_tooltip = {
-			fail_text = "requires_ap_synpol_the_flesh_is_weak"
+			fail_text = "requires_ap_the_flesh_is_weak"
 			has_ascension_perk = ap_synpol_the_flesh_is_weak
 		}
 		custom_tooltip = {

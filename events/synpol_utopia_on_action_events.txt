@@ -69,7 +69,7 @@ country_event = {
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
-							has_species_flag = synpol_done
+							has_species_flag = synpol_done@root
 						}
 					}
 				}
