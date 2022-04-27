@@ -1,9 +1,5 @@
 # The Flesh Is Weak
 ap_the_flesh_is_weak = {
-    potential = { always = no }
-}
-
-ap_synpol_the_flesh_is_weak = {
     on_enabled = {
 		custom_tooltip = "flesh_is_weak_tooltip"
 		hidden_effect = {
@@ -45,7 +41,7 @@ ap_synpol_the_flesh_is_weak = {
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
-			has_ascension_perk = ap_synpol_the_flesh_is_weak
+			has_ascension_perk = ap_the_flesh_is_weak
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
@@ -73,10 +69,6 @@ ap_synpol_the_flesh_is_weak = {
 
 # Synthetic Evolution
 ap_synthetic_evolution = {
-    potential = { always = no }
-}
-
-ap_synpol_synthetic_evolution = {
 	on_enabled = {
 		custom_tooltip = "synthetic_evolution_tooltip"
 		if = {
@@ -139,7 +131,7 @@ ap_synpol_synthetic_evolution = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_ap_the_flesh_is_weak"
-			has_ascension_perk = ap_synpol_the_flesh_is_weak
+			has_ascension_perk = ap_the_flesh_is_weak
 		}
 		custom_tooltip = {
 			fail_text = "requires_finished_cybernetics_project"
@@ -150,7 +142,7 @@ ap_synpol_synthetic_evolution = {
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
-			has_ascension_perk = ap_synpol_synthetic_evolution
+			has_ascension_perk = ap_synthetic_evolution
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no

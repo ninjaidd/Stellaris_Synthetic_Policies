@@ -2,24 +2,23 @@
 
 ##### ASCENSION PERKS
 
-ap_synpol_the_flesh_is_weak: "The Flesh is Weak"
-ap_synpol_the_flesh_is_weak_desc: "The limits and constraints imposed on us by our feeble organic bodies are simply unacceptable. To reach our full potential, we must turn to cybernetic implants."
+ap_the_flesh_is_weak: "The Flesh is Weak"
+ap_the_flesh_is_weak_desc: "The limits and constraints imposed on us by our feeble organic bodies are simply unacceptable. To reach our full potential, we must turn to cybernetic implants."
 
-ap_synpol_synthetic_evolution: "Synthetic Evolution"
-ap_synpol_synthetic_evolution_desc: "It is time to abandon the flawed organic vessels that imprison our minds. By transferring our neural patterns into synthetic bodies, we will achieve a higher state of being."
+ap_synthetic_evolution: "Synthetic Evolution"
+ap_synthetic_evolution_desc: "It is time to abandon the flawed organic vessels that imprison our minds. By transferring our neural patterns into synthetic bodies, we will achieve a higher state of being."
 
 ##### POLICIES
 
 ## Cybernetics Policy
 
 policy_syn_pol_cybernetic_policy: "Cybernetic Enhancement"
-policy_syn_pol_cybernetic_policy_desc: "Description"
+policy_syn_pol_cybernetic_policy_desc: "This policy detemines how cybernetic implants will be applied to our population."
 
 # cybernetics_optional
 cybernetics_optional: "Optional"
 cybernetics_optional_name: "Cybernetic Enhancement Optional"
-cybernetics_optional_short_desc: ""
-cybernetics_optional_desc: ""
+cybernetics_optional_desc: "Our citizens are able to choose whether or not they want to accept cybernetic enhancements.\n\n§EWhen we complete the special project §Y$ap_the_flesh_is_weak$§! a large portion of our population will be enhanced with cybernetic implants.§!"
 
 # cybernetics_discretionary
 cybernetics_discretionary: "Discretionary"
