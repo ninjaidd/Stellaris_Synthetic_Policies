@@ -1,5 +1,3 @@
-#Toggle edit when project finished
-
 special_project = {
 	key = "SYN_POL_CYBERNETICS_PROJECT"
 	cost = {
