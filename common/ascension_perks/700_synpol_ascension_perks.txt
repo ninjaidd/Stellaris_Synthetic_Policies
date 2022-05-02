@@ -1,10 +1,15 @@
-# The Flesh Is Weak
+###########################################################################
+## Copy of ap_the_flesh_is_weak but calls country event synpolutopia.1 
+###########################################################################
+
 ap_the_flesh_is_weak = {
     on_enabled = {
 		custom_tooltip = "flesh_is_weak_tooltip"
 		hidden_effect = {
+			##### START MODIFIED #####
             # Calls synpolutopia.1 instead of utopia.2500
 			country_event = { id = synpolutopia.1 }
+			##### END MODIFIED #####
 		}
 	}
 	modifier = {
@@ -67,7 +72,10 @@ ap_the_flesh_is_weak = {
 	}
 }
 
-# Synthetic Evolution
+###########################################################################
+## Copy of ap_synthetic_evolution but calls country event synpolutopia.3 
+###########################################################################
+
 ap_synthetic_evolution = {
 	on_enabled = {
 		custom_tooltip = "synthetic_evolution_tooltip"
@@ -99,8 +107,10 @@ ap_synthetic_evolution = {
 			custom_tooltip = disables_idyllic_bloom
 		}
 		hidden_effect = {
+			##### START MODIFIED #####
             # Calls synpolutopia.3 instead of utopia.2550
 			country_event = { id = synpolutopia.3 }
+			##### END MODIFIED #####
 		}
 	}
 	modifier = {
