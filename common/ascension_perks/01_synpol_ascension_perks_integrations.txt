@@ -1,0 +1,6 @@
+# NOTE bionic mod compatibility
+ap_bioasc_bionic = {
+    possible = { always = no }
+
+    potential = { always = no }
+}
