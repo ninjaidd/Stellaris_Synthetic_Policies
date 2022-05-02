@@ -1,8 +1,0 @@
-# TODO
-# on_game_start = {
-# 	events = {
-# 		synpol_mechov.1
-# 	}
-# }
-
-# TODO on_single_player_save_game_load ?
