@@ -1,3 +1,4 @@
+# For integration with other mods
 trait_robot_uploaded = {
     icon = "gfx/interface/icons/traits/trait_unknown.dds"
     cost = 0

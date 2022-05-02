@@ -1,11 +1,12 @@
-namespace = synpol_mechov
+# TODO
+# namespace = synpol_mechov
 
-event = {
-    id = synpol_mechov.1
-    hide_window = yes
-    is_triggered_only = yes
+# event = {
+#     id = synpol_mechov.1
+#     hide_window = yes
+#     is_triggered_only = yes
     
-    immediate = {
-        remove_global_flag = mechanical_overhaul_enabled
-    }
-}
+#     immediate = {
+#         remove_global_flag = mechanical_overhaul_enabled
+#     }
+# }

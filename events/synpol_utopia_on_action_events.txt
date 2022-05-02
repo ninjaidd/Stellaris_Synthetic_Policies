@@ -502,8 +502,8 @@ country_event = {
                     1 = {
                         species = {
                             set_timed_species_flag = {
-                                flag = synpol_done@root
-                                days = 60
+                                flag = synpol_synth@root
+                                days = 30
                             }
                         }
                     }

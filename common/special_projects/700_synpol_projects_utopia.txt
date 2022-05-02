@@ -1,3 +1,4 @@
+# Replaces FLESH_IS_WEAK_PROJECT
 special_project = {
 	key = "SYN_POL_CYBERNETICS_PROJECT"
 	cost = {
