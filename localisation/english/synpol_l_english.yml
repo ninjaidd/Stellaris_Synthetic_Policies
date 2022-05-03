@@ -10,17 +10,17 @@ policy_syn_pol_cybernetic_policy_desc: "This policy determines how cybernetic im
 # cybernetics_optional
 cybernetics_optional: "Optional"
 cybernetics_optional_name: "Cybernetic Enhancement Optional"
-cybernetics_optional_desc: "Our citizens are able to choose whether or not they want to accept cybernetic implant enhancements.\n\n§EWhen we complete the special project §Y$ap_the_flesh_is_weak$§! a large portion of our population will gain the §Y$trait_cybernetic$§! trait.§!"
+cybernetics_optional_desc: "Our citizens are able to choose whether or not they want to accept cybernetic implant enhancements.\n\n§EWhen we complete the special project §Y$FLESH_IS_WEAK_PROJECT$§! a large portion of our population will gain the §Y$trait_cybernetic$§! trait.§!"
 
 # cybernetics_discretionary
 cybernetics_discretionary: "Discretionary"
 cybernetics_discretionary_name: "Cybernetic Enhancement Discretionary"
-cybernetics_discretionary_desc: "All decisions regarding cybernetic implant enhancements are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$ap_the_flesh_is_weak$§! only leaders will be enhanced with cybernetic implants.\n\nSpecies can only gain the §Y$trait_cybernetic$§! trait through assimilation.§!"
+cybernetics_discretionary_desc: "All decisions regarding cybernetic implant enhancements are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$FLESH_IS_WEAK_PROJECT$§! only leaders will be enhanced with cybernetic implants.\n\nSpecies can only gain the §Y$trait_cybernetic$§! trait through assimilation.§!"
 
 # cybernetics_compulsory
 cybernetics_compulsory: "Compulsory"
 cybernetics_compulsory_name: "Cybernetic Enhancement Compulsory"
-cybernetics_compulsory_desc: "All eligible species must accept cybernetic implant enhancement.\n\n§EWhen we complete the special project §Y$ap_the_flesh_is_weak$§! all of our eligible species will gain the §Y$trait_cybernetic$§! trait.§!"
+cybernetics_compulsory_desc: "All eligible species must accept cybernetic implant enhancement.\n\n§EWhen we complete the special project §Y$FLESH_IS_WEAK_PROJECT$§! all of our eligible species will gain the §Y$trait_cybernetic$§! trait.§!"
 
 ## Synthetics Policy
 
@@ -30,17 +30,17 @@ policy_syn_pol_synthetic_policy_desc: "This policy determines how synthetic asce
 # synthetics_optional
 synthetics_optional: "Optional"
 synthetics_optional_name: "Synthetic Enhancement Optional"
-synthetics_optional_desc: "Our citizens are able to choose whether or not they want to have their consciousness transfered into a synthetic avatar.\n\n§EWhen we complete the special project §Y$ap_synthetic_evolution$§! a large portion of our population will be converted to a §Y$trait_mechanical$§! species.§!"
+synthetics_optional_desc: "Our citizens are able to choose whether or not they want to have their consciousness transfered into a synthetic avatar.\n\n§EWhen we complete the special project §Y$SYNTHETIC_EVOLUTION_PROJECT$§! a large portion of our population will be converted to a §Y$trait_mechanical$§! species.§!"
 
 # synthetics_discretionary
 synthetics_discretionary: "Discretionary"
 synthetics_discretionary_name: "Synthetic Enhancement Discretionary"
-synthetics_discretionary_desc: "All decisions regarding consciousness transference into synthetic bodies are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$ap_synthetic_evolution$§! only leaders will have their consciousness transfered into a synthetic body.\n\nSpecies can only be converted to a §Y$trait_mechanical$§! species through assimilation.§!"
+synthetics_discretionary_desc: "All decisions regarding consciousness transference into synthetic bodies are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$SYNTHETIC_EVOLUTION_PROJECT$§! only leaders will have their consciousness transfered into a synthetic body.\n\nSpecies can only be converted to a §Y$trait_mechanical$§! species through assimilation.§!"
 
 # synthetics_compulsory
 synthetics_compulsory: "Compulsory"
 synthetics_compulsory_name: "Synthetic Enhancement Compulsory"
-synthetics_compulsory_desc: "All eligible species must have their consciousness transfered into a synthetic avatar.\n\n§EWhen we complete the special project §Y$ap_the_flesh_is_weak$§! all of our eligible species will be converted to a §Y$trait_mechanical$§! species.§!"
+synthetics_compulsory_desc: "All eligible species must have their consciousness transfered into a synthetic avatar.\n\n§EWhen we complete the special project §Y$SYNTHETIC_EVOLUTION_PROJECT$§! all of our eligible species will be converted to a §Y$trait_mechanical$§! species.§!"
 
 ##### SPECIAL PROJECTS
 
