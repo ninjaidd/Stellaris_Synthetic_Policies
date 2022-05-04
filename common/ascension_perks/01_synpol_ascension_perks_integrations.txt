@@ -1,4 +1,4 @@
-# NOTE bionic mod compatibility
+# COMPAT Bionic
 ap_bioasc_bionic = {
     possible = { always = no }
 

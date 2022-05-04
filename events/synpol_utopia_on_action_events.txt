@@ -419,7 +419,7 @@ country_event = {
 					}
 				}
 
-				### START MECHANICAL OVERHAUL INTEGRATION ###
+				# COMPAT Mechanical Overhaul TODO fix
 				if = {
 					limit = {
 						has_global_flag = mechanical_overhaul_enabled
@@ -441,7 +441,7 @@ country_event = {
 						}
 					}
 				}
-				### END MECHANICAL OVERHAUL INTEGRATION ###
+				###
 				else = {
 					rename_species = {
 						prompt_country = root #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list

@@ -140,11 +140,12 @@ ap_synthetic_evolution = {
 			has_technology = tech_synthetic_leaders
 		}
 		##### START MODIFIED #####
-		# NOTE bionic mod compatibility
+		# COMPAT Bionic
 		custom_tooltip = {
 			fail_text = "requires_not_ap_bioasc_bionic"
 			NOT = { has_ascension_perk = ap_bioasc_bionic }
 		}
+		###
 		##### END MODIFIED #####
 		custom_tooltip = {
 			fail_text = "requires_ap_the_flesh_is_weak"
