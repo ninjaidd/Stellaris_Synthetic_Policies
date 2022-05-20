@@ -20,7 +20,6 @@ synpol_create_cybernetic_species_mod = {
 	}
 
 	owner = {
-
         # If policy is complusory update all pops
         # Else if policy is optional update some pops
         # Skip pop updating if policy is discretionary
@@ -80,7 +79,65 @@ synpol_create_cybernetic_species_mod = {
                 change_species = last_created_species
             }
         }
+        else_if = {
+            limit = {
+                NOT = { has_country_flag = synpol_cy_dis }
+				has_policy_flag = cybernetics_discretionary
+			}
+            if = {
+                limit = {
+                    this.capital_scope = {
+                        any_owned_pop = {
+                            is_exact_same_species = prevprev
+                        }
+                    }
+                }
+                this.capital_scope = {
+                    random_owned_pop = {
+                        limit = { is_exact_same_species = prevprev }
+                        change_species = last_created_species
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    this.capital_scope = {
+                        any_owned_pop = {
+                            is_same_species = prevprev
+                        }
+                    }
+                }
+                this.capital_scope = {
+                    random_owned_pop = {
+                        limit = { is_same_species = prevprev }
+                        change_species = last_created_species
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    any_owned_pop = {
+                        is_exact_same_species = prevprev
+                    }
+                }
+                random_owned_pop = {
+                    limit = { is_exact_same_species = prevprev }
+                    change_species = last_created_species
+                }
+            }
+            else = {
+                random_owned_pop = {
+                    limit = { is_same_species = prevprev }
+                    change_species = last_created_species
+                }
+            }
+            set_timed_country_flag = {
+                flag = synpol_cy_dis
+                days = 30
+            }
+        }
 
+        # TODO do something if not compulsory
 		every_owned_leader = {
 			limit = { is_exact_same_species = event_target:changing_species }
 			change_species = last_created_species
@@ -89,6 +146,7 @@ synpol_create_cybernetic_species_mod = {
 			limit = { is_exact_same_species = event_target:changing_species }
 			change_species = last_created_species
 		}
+        # TODO ignore if discretionary, limit if optional
 		every_owned_army = {
 			limit = {
 				exists = species
@@ -96,6 +154,7 @@ synpol_create_cybernetic_species_mod = {
 			}
 			change_species = last_created_species
 		}
+        # TODO ignore if discretionary
 		every_owned_ship = {
 			limit = {
 				is_ship_class = shipclass_colonizer

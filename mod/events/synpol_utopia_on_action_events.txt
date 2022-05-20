@@ -470,6 +470,7 @@ country_event = {
 		# If policy is complusory update all pops
         # Else if policy is optional update some pops
 		# Skip pop updating if policy is discretionary
+
 		if = {
 			limit = {
 				has_policy_flag = synthetics_compulsory
@@ -524,7 +525,65 @@ country_event = {
                 }
 			}
 		}
+		else_if = {
+            limit = {
+                NOT = { has_country_flag = synpol_sy_dis }
+				has_policy_flag = synthetics_discretionary
+			}
+            if = {
+                limit = {
+                    root.capital_scope = {
+                        any_owned_pop = {
+                            is_exact_same_species = prevprev
+                        }
+                    }
+                }
+                root.capital_scope = {
+                    random_owned_pop = {
+                        limit = { is_exact_same_species = prevprev }
+                        change_species = event_target:new_robotic_species
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    root.capital_scope = {
+                        any_owned_pop = {
+                            is_same_species = prevprev
+                        }
+                    }
+                }
+                root.capital_scope = {
+                    random_owned_pop = {
+                        limit = { is_same_species = prevprev }
+                        change_species = event_target:new_robotic_species
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    any_owned_pop = {
+                        is_exact_same_species = prevprev
+                    }
+                }
+                random_owned_pop = {
+                    limit = { is_exact_same_species = prevprev }
+                    change_species = event_target:new_robotic_species
+                }
+            }
+            else = {
+                random_owned_pop = {
+                    limit = { is_same_species = prevprev }
+                    change_species = event_target:new_robotic_species
+                }
+            }
+            set_timed_country_flag = {
+                flag = synpol_sy_dis
+                days = 30
+            }
+        }
 
+		# TODO ignore if discretionary
 		every_controlled_ship = {
 			limit = {
 				is_ship_class = shipclass_colonizer
@@ -535,6 +594,7 @@ country_event = {
 			change_species = event_target:new_robotic_species
 		}
 
+		# TODO ignore if discretionary, limit if optional
 		every_owned_army = {
 			limit = {
 				exists = species
@@ -551,6 +611,7 @@ country_event = {
 			}
 		}
 
+		# TODO ignore if discretionary, limit if optional
 		every_owned_army = {
 			limit = {
 				exists = species
@@ -567,6 +628,7 @@ country_event = {
 			}
 		}
 
+		# TODO do something if not compulsory
 		every_owned_leader = {
 			log = "leader"
 			limit = {
