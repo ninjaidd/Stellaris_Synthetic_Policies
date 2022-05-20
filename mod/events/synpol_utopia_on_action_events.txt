@@ -63,13 +63,15 @@ country_event = {
 			limit = {
 				any_owned_pop = {
 					is_sapient = yes
+					##### MODIFIED
+					NOT = { has_pop_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
-							has_species_flag = synpol_done@root.owner
 						}
 					}
 				}
@@ -77,13 +79,15 @@ country_event = {
 			random_owned_pop = {
 				limit = {
 					is_sapient = yes
+					##### MODIFIED
+					NOT = { has_pop_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
-							has_species_flag = synpol_done@root.owner
 						}
 					}
 				}
@@ -100,6 +104,9 @@ country_event = {
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
+							##### MODIFIED
+							has_species_flag = synpol_cy_done
+							#####
 						}
 					}
 				}
@@ -112,6 +119,9 @@ country_event = {
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
+							##### MODIFIED
+							has_species_flag = synpol_cy_done
+							#####
 						}
 					}
 				}
@@ -135,6 +145,9 @@ country_event = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
+							##### MODIFIED
+							has_species_flag = synpol_cy_done
+							#####
 						}
 					}
 				}
@@ -146,6 +159,9 @@ country_event = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
+							##### MODIFIED
+							has_species_flag = synpol_cy_done
+							#####
 						}
 					}
 				}
@@ -170,6 +186,9 @@ country_event = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
+							##### MODIFIED
+							has_species_flag = synpol_cy_done
+							#####
 						}
 					}
 				}
@@ -182,6 +201,9 @@ country_event = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
+							##### MODIFIED
+							has_species_flag = synpol_cy_done
+							#####
 						}
 					}
 				}
@@ -205,6 +227,9 @@ country_event = {
 						has_trait = trait_cybernetic
 						has_trait = trait_mechanical
 						has_trait = trait_machine_unit
+						##### MODIFIED
+						has_species_flag = synpol_cy_done
+						#####
 					}
 				}
 			}
@@ -419,38 +444,18 @@ country_event = {
 					}
 				}
 
-				# COMPAT Mechanical Overhaul TODO fix
-				if = {
-					limit = {
-						has_global_flag = mechanical_overhaul_enabled
-					}
+				rename_species = {
+					prompt_country = root #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
+					name_list = ascension_list
+				}
 
-					modify_species = {
-						species = this
-                        add_trait = trait_robot_uploaded
-                        add_traits_at_start_of_list = yes
-						change_scoped_species = no
-						
-						effect = {
-							rename_species = {
-								prompt_country = root #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
-								name_list = ascension_list
-							}
-							save_event_target_as = new_robotic_species
-							set_species_flag = synth_for@root ### UPDATED Flag species for use in planetary decision
-						}
-					}
-				}
-				###
-				else = {
-					rename_species = {
-						prompt_country = root #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
-						name_list = ascension_list
-					}
-	
-					save_event_target_as = new_robotic_species
-					set_species_flag = synth_for@root ### UPDATED Flag species for use in planetary decision
-				}
+				save_event_target_as = new_robotic_species
+				# set_species_flag = synth_for@root ##### UPDATED Flag species for use in planetary decision
+
+				set_timed_species_flag = {
+                    flag = synpol_sy_done
+                    days = 30
+                }
 			}
 		}
 
@@ -500,12 +505,10 @@ country_event = {
                         }
                     }
                     1 = {
-                        species = {
-                            set_timed_species_flag = {
-                                flag = synpol_synth@root
-                                days = 30
-                            }
-                        }
+						set_timed_pop_flag = {
+							flag = synpol_sy_done@prev
+							days = 30 
+						}
                     }
                 }
 			}
@@ -554,6 +557,7 @@ country_event = {
 		}
 
 		every_owned_leader = {
+			log = "leader"
 			limit = {
 				OR = {
 					has_trait = leader_trait_admiral_cyborg
@@ -568,6 +572,7 @@ country_event = {
 					has_trait = leader_trait_scientist_synthetic
 				}
 			}
+			log = "found"
 			change_species = event_target:new_robotic_species
 			change_leader_portrait = species
 		}
@@ -589,6 +594,7 @@ country_event = {
 			change_species = event_target:new_robotic_species
 			change_leader_portrait = species
 		}
+		
 		change_dominant_species = { species = event_target:new_robotic_species }
 
 		every_owned_leader = {

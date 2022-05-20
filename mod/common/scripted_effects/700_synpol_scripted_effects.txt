@@ -15,6 +15,12 @@ synpol_create_cybernetic_species_mod = {
 				ideal_planet_class = this
 				trait = trait_cybernetic
             }
+            effect = {
+                set_timed_species_flag = {
+                    flag = synpol_cy_done
+                    days = 30
+                }
+            }
         }
 		save_event_target_as = changing_species
 	}
@@ -59,11 +65,9 @@ synpol_create_cybernetic_species_mod = {
                         }
                     }
                     1 = {
-                        species = {
-                            set_timed_species_flag = {
-                                flag = synpol_done@root
-                                days = 60
-                            }
+                        set_timed_pop_flag = {
+                            flag = synpol_cy_done@prev
+                            days = 30 
                         }
                     }
                 }
