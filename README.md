@@ -21,7 +21,7 @@ Adds policies to control how the "The Flesh is Weak" and "Synthetic Evolution" a
   [/tr]
   [tr]
     [td]Discretionary  [/td]
-    [td]No pops will be upgraded - changes to pops are made exclusively by assimilation. (One pop will be upgraded as the game requires for assimilation to work.)[/td]
+    [td]No pops will be upgraded - changes to pops are made exclusively by assimilation.[/td]
   [/tr]
   [tr]
     [td]Compulsory  [/td]

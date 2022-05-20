@@ -375,8 +375,25 @@ country_event = {
 	immediate = {
 		set_country_flag = flesh_weakened
 
-		synpol_create_cybernetic_species_mod_single = yes
-		last_created_species = { save_event_target_as = new_main_species }
+		species = {
+			create_species = {
+				is_mod = yes
+				name = this
+				plural = this
+				class = this
+				portrait = this
+				traits = this
+				can_be_modified = this
+				homeworld = this
+				namelist = this
+				gender = this
+				traits = {
+					ideal_planet_class = this
+					trait = trait_cybernetic
+				}
+			}
+			save_event_target_as = new_main_species
+		}
 
 		change_dominant_species = { species = event_target:new_main_species }
 
@@ -931,56 +948,6 @@ country_event = {
 				}
 
 				save_event_target_as = new_robotic_species
-			}
-		}
-		
-		#####
-
-		if = {
-			limit = {
-				root.capital_scope = {
-					any_owned_pop = {
-						is_exact_same_species = prevprev
-					}
-				}
-			}
-			root.capital_scope = {
-				random_owned_pop = {
-					limit = { is_exact_same_species = prevprev }
-					change_species = event_target:new_robotic_species
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				root.capital_scope = {
-					any_owned_pop = {
-						is_same_species = prevprev
-					}
-				}
-			}
-			root.capital_scope = {
-				random_owned_pop = {
-					limit = { is_same_species = prevprev }
-					change_species = event_target:new_robotic_species
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				any_owned_pop = {
-					is_exact_same_species = prevprev
-				}
-			}
-			random_owned_pop = {
-				limit = { is_exact_same_species = prevprev }
-				change_species = event_target:new_robotic_species
-			}
-		}
-		else = {
-			random_owned_pop = {
-				limit = { is_same_species = prevprev }
-				change_species = event_target:new_robotic_species
 			}
 		}
 
