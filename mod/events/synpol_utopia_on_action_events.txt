@@ -120,7 +120,7 @@ country_event = {
 						species = prev
 					}
 					last_created_pop = {
-						create_cybernetic_species_mod = yes
+						synpol_create_cybernetic_species_mod = yes
 						kill_pop = yes
 					}
 				}
@@ -197,7 +197,7 @@ country_event = {
 			}
 		}
 
-		every_owned_ship = {
+		every_controlled_ship = {
 			limit = {
 				is_ship_class = shipclass_colonizer
 				species = {
@@ -511,7 +511,7 @@ country_event = {
 			}
 		}
 
-		every_owned_ship = {
+		every_controlled_ship = {
 			limit = {
 				is_ship_class = shipclass_colonizer
 				species = {
