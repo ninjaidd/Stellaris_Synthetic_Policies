@@ -98,30 +98,30 @@ country_event = {
 		while = {
 			limit = {
 				any_owned_leader = {
+					##### MODIFIED
+					NOT = { has_leader_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
-							##### MODIFIED
-							has_species_flag = synpol_cy_done
-							#####
 						}
 					}
 				}
 			}
 			random_owned_leader = {
 				limit = {
+					##### MODIFIED
+					NOT = { has_leader_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 							has_trait = leader_trait_curator
-							##### MODIFIED
-							has_species_flag = synpol_cy_done
-							#####
 						}
 					}
 				}
@@ -130,38 +130,44 @@ country_event = {
 						species = prev
 					}
 					last_created_pop = {
+						#####
+						set_pop_flag = synpol_cy_force@root
+						#####
 						synpol_create_cybernetic_species_mod = yes
 						kill_pop = yes
 					}
 				}
+				set_leader_flag = synpol_cy_done@root # TODO timed
 			}
 		}
 
 		while = {
 			limit = {
 				any_pool_leader = {
+					##### MODIFIED
+					NOT = { has_leader_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
-							##### MODIFIED
-							has_species_flag = synpol_cy_done
-							#####
+							has_trait = leader_trait_curator
 						}
 					}
 				}
 			}
 			random_pool_leader = {
 				limit = {
+					##### MODIFIED
+					NOT = { has_leader_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
-							##### MODIFIED
-							has_species_flag = synpol_cy_done
-							#####
+							has_trait = leader_trait_curator
 						}
 					}
 				}
@@ -170,10 +176,14 @@ country_event = {
 						species = prev
 					}
 					last_created_pop = {
+						#####
+						set_pop_flag = synpol_cy_force@root
+						#####
 						synpol_create_cybernetic_species_mod = yes
 						kill_pop = yes
 					}
 				}
+				set_leader_flag = synpol_cy_done@root # TODO timed
 			}
 		}
 
@@ -181,14 +191,14 @@ country_event = {
 			limit = {
 				any_owned_army = {
 					exists = species
+					##### MODIFIED
+					NOT = { has_army_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
-							##### MODIFIED
-							has_species_flag = synpol_cy_done
-							#####
 						}
 					}
 				}
@@ -196,14 +206,14 @@ country_event = {
 			random_owned_army = {
 				limit = {
 					exists = species
+					##### MODIFIED
+					NOT = { has_army_flag = synpol_cy_done@root }
+					#####
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
-							##### MODIFIED
-							has_species_flag = synpol_cy_done
-							#####
 						}
 					}
 				}
@@ -212,10 +222,14 @@ country_event = {
 						species = prev.species
 					}
 					last_created_pop = {
+						#####
+						set_pop_flag = synpol_cy_force@root
+						#####
 						synpol_create_cybernetic_species_mod = yes
 						kill_pop = yes
 					}
 				}
+				set_army_flag = synpol_cy_done@root # TODO timed
 			}
 		}
 
@@ -227,9 +241,6 @@ country_event = {
 						has_trait = trait_cybernetic
 						has_trait = trait_mechanical
 						has_trait = trait_machine_unit
-						##### MODIFIED
-						has_species_flag = synpol_cy_done
-						#####
 					}
 				}
 			}
@@ -238,6 +249,9 @@ country_event = {
 					species = prev
 				}
 				last_created_pop = {
+					#####
+					set_pop_flag = synpol_cy_force@root
+					#####
 					synpol_create_cybernetic_species_mod = yes
 					kill_pop = yes
 				}
@@ -450,19 +464,12 @@ country_event = {
 				}
 
 				save_event_target_as = new_robotic_species
-				# set_species_flag = synth_for@root ##### UPDATED Flag species for use in planetary decision
-
-				set_timed_species_flag = {
-                    flag = synpol_sy_done
-                    days = 30
-                }
 			}
 		}
 
 		# If policy is complusory update all pops
         # Else if policy is optional update some pops
 		# Skip pop updating if policy is discretionary
-		
 		if = {
 			limit = {
 				has_policy_flag = synthetics_compulsory
@@ -482,11 +489,11 @@ country_event = {
 			every_owned_pop = {
 				limit = {
 					species = { has_trait = trait_cybernetic }
+					NOT = { has_pop_flag = synpol_sy_done@root }
 				}
 				random_list = {
                     8 = {
                         change_species = event_target:new_robotic_species
-                        
                         modifier = {
                             factor = 1.14
                             root = { has_ethic = "ethic_fanatic_materialist" }
@@ -503,11 +510,15 @@ country_event = {
                             factor = 0.91
                             root = { has_ethic = "ethic_fanatic_spiritualist" }
                         }
+						set_timed_pop_flag = {
+							flag = synpol_sy_done@prev
+							days = 30
+						}
                     }
                     1 = {
 						set_timed_pop_flag = {
 							flag = synpol_sy_done@prev
-							days = 30 
+							days = 30
 						}
                     }
                 }
