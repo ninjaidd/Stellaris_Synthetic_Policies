@@ -15,7 +15,7 @@ cybernetics_optional_desc: "Our citizens are able to choose whether or not they 
 # cybernetics_discretionary
 cybernetics_discretionary: "Discretionary"
 cybernetics_discretionary_name: "Cybernetic Enhancement Discretionary"
-cybernetics_discretionary_desc: "All decisions regarding cybernetic implant enhancements are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$FLESH_IS_WEAK_PROJECT$§! only leaders will be enhanced with cybernetic implants.\n\nSpecies can only gain the §Y$trait_cybernetic$§! trait through assimilation.§!"
+cybernetics_discretionary_desc: "All decisions regarding cybernetic implant enhancements are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$FLESH_IS_WEAK_PROJECT$§! species can only gain the §Y$trait_cybernetic$§! trait through assimilation.§!"
 
 # cybernetics_compulsory
 cybernetics_compulsory: "Compulsory"
@@ -35,7 +35,7 @@ synthetics_optional_desc: "Our citizens are able to choose whether or not they w
 # synthetics_discretionary
 synthetics_discretionary: "Discretionary"
 synthetics_discretionary_name: "Synthetic Enhancement Discretionary"
-synthetics_discretionary_desc: "All decisions regarding consciousness transference into synthetic bodies are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$SYNTHETIC_EVOLUTION_PROJECT$§! only leaders will have their consciousness transfered into a synthetic body.\n\nSpecies can only be converted to a §Y$trait_mechanical$§! species through assimilation.§!"
+synthetics_discretionary_desc: "All decisions regarding consciousness transference into synthetic bodies are at the sole discretion of the government.\n\n§EWhen we complete the special project §Y$SYNTHETIC_EVOLUTION_PROJECT$§! species can only be converted to a §Y$trait_mechanical$§! species through assimilation.§!"
 
 # synthetics_compulsory
 synthetics_compulsory: "Compulsory"

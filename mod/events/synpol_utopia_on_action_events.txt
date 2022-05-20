@@ -57,17 +57,18 @@ country_event = {
 				species = { save_event_target_as = new_main_species }
 			}
 		}
+
 		change_dominant_species = { species = event_target:new_main_species }
 
 		while = {
 			limit = {
 				any_owned_pop = {
 					is_sapient = yes
-					##### MODIFIED
-					NOT = { has_pop_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_pop_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -79,11 +80,11 @@ country_event = {
 			random_owned_pop = {
 				limit = {
 					is_sapient = yes
-					##### MODIFIED
-					NOT = { has_pop_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_pop_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -98,11 +99,11 @@ country_event = {
 		while = {
 			limit = {
 				any_owned_leader = {
-					##### MODIFIED
-					NOT = { has_leader_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_leader_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -113,11 +114,11 @@ country_event = {
 			}
 			random_owned_leader = {
 				limit = {
-					##### MODIFIED
-					NOT = { has_leader_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_leader_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -137,7 +138,10 @@ country_event = {
 						kill_pop = yes
 					}
 				}
-				set_leader_flag = synpol_cy_done@root # TODO timed
+				set_timed_leader_flag = {
+					flag = synpol_cy_done@root
+					days = 30
+				}
 			}
 		}
 
@@ -159,11 +163,11 @@ country_event = {
 			}
 			random_pool_leader = {
 				limit = {
-					##### MODIFIED
-					NOT = { has_leader_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_leader_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -183,7 +187,10 @@ country_event = {
 						kill_pop = yes
 					}
 				}
-				set_leader_flag = synpol_cy_done@root # TODO timed
+				set_timed_leader_flag = {
+					flag = synpol_cy_done@root
+					days = 30
+				}
 			}
 		}
 
@@ -191,11 +198,11 @@ country_event = {
 			limit = {
 				any_owned_army = {
 					exists = species
-					##### MODIFIED
-					NOT = { has_army_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_army_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -206,11 +213,11 @@ country_event = {
 			random_owned_army = {
 				limit = {
 					exists = species
-					##### MODIFIED
-					NOT = { has_army_flag = synpol_cy_done@root }
-					#####
 					species = {
 						NOR = {
+							##### MODIFIED
+							prev = { has_army_flag = synpol_cy_done@root }
+							#####
 							has_trait = trait_cybernetic
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
@@ -229,7 +236,10 @@ country_event = {
 						kill_pop = yes
 					}
 				}
-				set_army_flag = synpol_cy_done@root # TODO timed
+				set_timed_army_flag = {
+					flag = synpol_cy_done@root
+					days = 30
+				}
 			}
 		}
 
@@ -483,10 +493,47 @@ country_event = {
 				}
 				change_species = event_target:new_robotic_species
 			}
+			every_owned_leader = {
+				limit = {
+					OR = {
+						has_trait = leader_trait_admiral_cyborg
+						has_trait = leader_trait_general_cyborg
+						has_trait = leader_trait_governor_cyborg
+						has_trait = leader_trait_scientist_cyborg
+						has_trait = leader_trait_ruler_cyborg
+						has_trait = leader_trait_admiral_synthetic
+						has_trait = leader_trait_ruler_synthetic
+						has_trait = leader_trait_general_synthetic
+						has_trait = leader_trait_governor_synthetic
+						has_trait = leader_trait_scientist_synthetic
+					}
+				}
+				change_species = event_target:new_robotic_species
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
+						has_trait = leader_trait_admiral_cyborg
+						has_trait = leader_trait_general_cyborg
+						has_trait = leader_trait_governor_cyborg
+						has_trait = leader_trait_scientist_cyborg
+						has_trait = leader_trait_ruler_cyborg
+						has_trait = leader_trait_admiral_synthetic
+						has_trait = leader_trait_ruler_synthetic
+						has_trait = leader_trait_general_synthetic
+						has_trait = leader_trait_governor_synthetic
+						has_trait = leader_trait_scientist_synthetic
+					}
+				}
+				change_species = event_target:new_robotic_species
+				change_leader_portrait = species
+			}
 		}
 		else_if = {
 			limit = { has_policy_flag = synthetics_optional }
 
+			# Pops
 			every_owned_pop = {
 				limit = {
 					species = { has_trait = trait_cybernetic }
@@ -512,13 +559,109 @@ country_event = {
                             root = { has_ethic = "ethic_fanatic_spiritualist" }
                         }
 						set_timed_pop_flag = {
-							flag = synpol_sy_done@prev
+							flag = synpol_sy_done@root
 							days = 30
 						}
                     }
                     1 = {
 						set_timed_pop_flag = {
-							flag = synpol_sy_done@prev
+							flag = synpol_sy_done@root
+							days = 30
+						}
+                    }
+                }
+			}
+
+			#Leaders
+			every_owned_leader = {
+				limit = {
+					OR = {
+						has_trait = leader_trait_admiral_cyborg
+						has_trait = leader_trait_general_cyborg
+						has_trait = leader_trait_governor_cyborg
+						has_trait = leader_trait_scientist_cyborg
+						has_trait = leader_trait_ruler_cyborg
+						has_trait = leader_trait_admiral_synthetic
+						has_trait = leader_trait_ruler_synthetic
+						has_trait = leader_trait_general_synthetic
+						has_trait = leader_trait_governor_synthetic
+						has_trait = leader_trait_scientist_synthetic
+					}
+					NOT = { has_leader_flag = synpol_sy_done@root }
+				}
+				random_list = {
+                    8 = {
+                        change_species = event_target:new_robotic_species
+						change_leader_portrait = species
+                        modifier = {
+                            factor = 1.14
+                            root = { has_ethic = "ethic_fanatic_materialist" }
+                        }
+                        modifier = {
+                            factor = 1.07
+                            root = { has_ethic = "ethic_materialist" }
+                        }
+                        modifier = {
+                            factor = 0.95
+                            root = { has_ethic = "ethic_spiritualist" }
+                        }
+                        modifier = {
+                            factor = 0.91
+                            root = { has_ethic = "ethic_fanatic_spiritualist" }
+                        }
+                    }
+					1 = {
+						set_timed_leader_flag = {
+							flag = synpol_sy_done@root
+							days = 30
+						}
+                    }
+                }
+			}
+			every_pool_leader = {
+				limit = {
+					OR = {
+						has_trait = leader_trait_admiral_cyborg
+						has_trait = leader_trait_general_cyborg
+						has_trait = leader_trait_governor_cyborg
+						has_trait = leader_trait_scientist_cyborg
+						has_trait = leader_trait_ruler_cyborg
+						has_trait = leader_trait_admiral_synthetic
+						has_trait = leader_trait_ruler_synthetic
+						has_trait = leader_trait_general_synthetic
+						has_trait = leader_trait_governor_synthetic
+						has_trait = leader_trait_scientist_synthetic
+					}
+					NOT = { has_leader_flag = synpol_sy_done@root }
+				}
+				random_list = {
+                    8 = {
+                        change_species = event_target:new_robotic_species
+						change_leader_portrait = species
+                        modifier = {
+                            factor = 1.14
+                            root = { has_ethic = "ethic_fanatic_materialist" }
+                        }
+                        modifier = {
+                            factor = 1.07
+                            root = { has_ethic = "ethic_materialist" }
+                        }
+                        modifier = {
+                            factor = 0.95
+                            root = { has_ethic = "ethic_spiritualist" }
+                        }
+                        modifier = {
+                            factor = 0.91
+                            root = { has_ethic = "ethic_fanatic_spiritualist" }
+                        }
+						set_timed_leader_flag = {
+							flag = synpol_sy_done@root
+							days = 30
+						}
+                    }
+                    1 = {
+						set_timed_leader_flag = {
+							flag = synpol_sy_done@root
 							days = 30
 						}
                     }
@@ -583,183 +726,150 @@ country_event = {
             }
         }
 
-		# TODO ignore if discretionary
-		every_controlled_ship = {
-			limit = {
-				is_ship_class = shipclass_colonizer
-				species = {
-					has_trait = trait_cybernetic
+		if = {
+            limit = {
+                NOT = { has_policy_flag = synthetics_discretionary }
+            }
+			every_controlled_ship = {
+				limit = {
+					is_ship_class = shipclass_colonizer
+					species = {
+						has_trait = trait_cybernetic
+					}
+				}
+				change_species = event_target:new_robotic_species
+			}
+			
+			every_owned_army = {
+				limit = {
+					exists = species
+					exists = planet
+					species = {
+						has_trait = trait_cybernetic
+					}
+					army_type = assault_army
+				}
+				modify_army = {
+					name = random
+					type = "robotic_army"
+					species = event_target:new_robotic_species
 				}
 			}
-			change_species = event_target:new_robotic_species
+			
+			every_owned_army = {
+				limit = {
+					exists = species
+					exists = planet
+					species = {
+						has_trait = trait_cybernetic
+					}
+					army_type = defense_army
+				}
+				modify_army = {
+					name = random
+					type = "robotic_defense_army"
+					species = event_target:new_robotic_species
+				}
+			}
 		}
 
-		# TODO ignore if discretionary, limit if optional
-		every_owned_army = {
-			limit = {
-				exists = species
-				exists = planet
-				species = {
-					has_trait = trait_cybernetic
-				}
-				army_type = assault_army
-			}
-			modify_army = {
-				name = random
-				type = "robotic_army"
-				species = event_target:new_robotic_species
-			}
-		}
-
-		# TODO ignore if discretionary, limit if optional
-		every_owned_army = {
-			limit = {
-				exists = species
-				exists = planet
-				species = {
-					has_trait = trait_cybernetic
-				}
-				army_type = defense_army
-			}
-			modify_army = {
-				name = random
-				type = "robotic_defense_army"
-				species = event_target:new_robotic_species
-			}
-		}
-
-		# TODO do something if not compulsory
-		every_owned_leader = {
-			log = "leader"
-			limit = {
-				OR = {
-					has_trait = leader_trait_admiral_cyborg
-					has_trait = leader_trait_general_cyborg
-					has_trait = leader_trait_governor_cyborg
-					has_trait = leader_trait_scientist_cyborg
-					has_trait = leader_trait_ruler_cyborg
-					has_trait = leader_trait_admiral_synthetic
-					has_trait = leader_trait_ruler_synthetic
-					has_trait = leader_trait_general_synthetic
-					has_trait = leader_trait_governor_synthetic
-					has_trait = leader_trait_scientist_synthetic
-				}
-			}
-			log = "found"
-			change_species = event_target:new_robotic_species
-			change_leader_portrait = species
-		}
-		every_pool_leader = {
-			limit = {
-				OR = {
-					has_trait = leader_trait_admiral_cyborg
-					has_trait = leader_trait_general_cyborg
-					has_trait = leader_trait_governor_cyborg
-					has_trait = leader_trait_scientist_cyborg
-					has_trait = leader_trait_ruler_cyborg
-					has_trait = leader_trait_admiral_synthetic
-					has_trait = leader_trait_ruler_synthetic
-					has_trait = leader_trait_general_synthetic
-					has_trait = leader_trait_governor_synthetic
-					has_trait = leader_trait_scientist_synthetic
-				}
-			}
-			change_species = event_target:new_robotic_species
-			change_leader_portrait = species
-		}
-		
 		change_dominant_species = { species = event_target:new_robotic_species }
 
-		every_owned_leader = {
+		if = {
 			limit = {
-				species = { has_trait = trait_mechanical }
-				NOR = {
-					has_trait = leader_trait_admiral_synthetic
-					has_trait = leader_trait_general_synthetic
-					has_trait = leader_trait_governor_synthetic
-					has_trait = leader_trait_scientist_synthetic
-					has_trait = leader_trait_ruler_synthetic
+                NOT = { has_policy_flag = synthetics_discretionary }
+            }
+			every_owned_leader = {
+				limit = {
+					species = { has_trait = trait_mechanical }
+					NOR = {
+						has_trait = leader_trait_admiral_synthetic
+						has_trait = leader_trait_general_synthetic
+						has_trait = leader_trait_governor_synthetic
+						has_trait = leader_trait_scientist_synthetic
+						has_trait = leader_trait_ruler_synthetic
+					}
+				}
+				if = {
+					limit = { leader_class = admiral }
+					add_trait = leader_trait_admiral_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_admiral_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = general }
+					add_trait = leader_trait_general_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_general_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = governor }
+					add_trait = leader_trait_governor_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_governor_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = scientist }
+					add_trait = leader_trait_scientist_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_scientist_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = ruler }
+					add_trait = leader_trait_ruler_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_ruler_cyborg
 				}
 			}
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_admiral_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_general_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_governor_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_scientist_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_ruler_cyborg
-			}
-		}
-		every_pool_leader = {
-			limit = {
-				species = { has_trait = trait_mechanical }
-				NOR = {
-					has_trait = leader_trait_admiral_synthetic
-					has_trait = leader_trait_general_synthetic
-					has_trait = leader_trait_governor_synthetic
-					has_trait = leader_trait_scientist_synthetic
-					has_trait = leader_trait_ruler_synthetic
+			every_pool_leader = {
+				limit = {
+					species = { has_trait = trait_mechanical }
+					NOR = {
+						has_trait = leader_trait_admiral_synthetic
+						has_trait = leader_trait_general_synthetic
+						has_trait = leader_trait_governor_synthetic
+						has_trait = leader_trait_scientist_synthetic
+						has_trait = leader_trait_ruler_synthetic
+					}
 				}
-			}
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = leader_trait_admiral_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_admiral_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = leader_trait_general_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_general_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = leader_trait_governor_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_governor_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = leader_trait_scientist_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_scientist_cyborg
-				remove_ruler_trait = leader_trait_ruler_cyborg
-			}
-			if = {
-				limit = { leader_class = ruler }
-				add_trait = leader_trait_ruler_synthetic
-				add_ruler_trait = leader_trait_ruler_synthetic
-				remove_trait = leader_trait_ruler_cyborg
+				if = {
+					limit = { leader_class = admiral }
+					add_trait = leader_trait_admiral_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_admiral_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = general }
+					add_trait = leader_trait_general_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_general_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = governor }
+					add_trait = leader_trait_governor_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_governor_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = scientist }
+					add_trait = leader_trait_scientist_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_scientist_cyborg
+					remove_ruler_trait = leader_trait_ruler_cyborg
+				}
+				if = {
+					limit = { leader_class = ruler }
+					add_trait = leader_trait_ruler_synthetic
+					add_ruler_trait = leader_trait_ruler_synthetic
+					remove_trait = leader_trait_ruler_cyborg
+				}
 			}
 		}
 
