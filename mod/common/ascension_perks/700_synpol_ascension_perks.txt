@@ -1,5 +1,5 @@
 ###########################################################################
-## Copy of ap_the_flesh_is_weak but calls country event synpolutopia.1
+## Copy of ap_the_flesh_is_weak but calls country event synpolu.1
 ###########################################################################
 
 ap_the_flesh_is_weak = {
@@ -7,8 +7,8 @@ ap_the_flesh_is_weak = {
 		custom_tooltip = "flesh_is_weak_tooltip"
 		hidden_effect = {
 			##### START MODIFIED #####
-            # Calls synpolutopia.1 instead of utopia.2500
-			country_event = { id = synpolutopia.1 }
+            # Calls synpolu.1 instead of utopia.2500
+			country_event = { id = synpolu.1 }
 			##### END MODIFIED #####
 		}
 	}
@@ -73,7 +73,7 @@ ap_the_flesh_is_weak = {
 }
 
 ###########################################################################
-## Copy of ap_synthetic_evolution but calls country event synpolutopia.3
+## Copy of ap_synthetic_evolution but calls country event synpolu.3
 ###########################################################################
 
 ap_synthetic_evolution = {
@@ -108,8 +108,8 @@ ap_synthetic_evolution = {
 		}
 		hidden_effect = {
 			##### START MODIFIED #####
-            # Calls synpolutopia.3 instead of utopia.2550
-			country_event = { id = synpolutopia.3 }
+            # Calls synpolu.3 instead of utopia.2550
+			country_event = { id = synpolu.3 }
 			##### END MODIFIED #####
 		}
 	}

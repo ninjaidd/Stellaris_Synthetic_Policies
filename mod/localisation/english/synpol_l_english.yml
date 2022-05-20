@@ -57,21 +57,24 @@ SYN_POL_SYNTHETICS_PROJECT_DESC: "$SYNTHETIC_EVOLUTION_PROJECT_DESC$"
 ##### EVENTS
 
 ## Cybernetic Enable Project
-synpolutopia.1.name: "$utopia.2500.name$"
-synpolutopia.1.desc: "$utopia.2500.desc$"
-synpolutopia.1.a: "$utopia.2500.a$"
+synpolu.1.name: "$utopia.2500.name$"
+synpolu.1.desc: "$utopia.2500.desc$"
+synpolu.1.a: "$utopia.2500.a$"
 
 ## Cybernetic Project Complete
-synpolutopia.2.name: "$utopia.2501.name$"
-synpolutopia.2.desc: "$utopia.2501.desc$"
-synpolutopia.2.a: "$utopia.2501.a$"
+synpolu.2.name: "$utopia.2501.name$"
+synpolu.2.desc: "$utopia.2501.desc$"
+synpolu.2.a: "$utopia.2501.a$"
 
 ## Synthetic Enable Project
-synpolutopia.3.name: "$utopia.2550.name$"
-synpolutopia.3.desc: "$utopia.2550.desc$"
-synpolutopia.3.a: "$utopia.2550.a$"
+synpolu.3.name: "$utopia.2550.name$"
+synpolu.3.desc: "$utopia.2550.desc$"
+synpolu.3.a: "$utopia.2550.a$"
 
 ## Synthetic Project Complete
-synpolutopia.4.name: "$utopia.2551.name$"
-synpolutopia.4.desc: "$utopia.2551.desc$"
-synpolutopia.4.a: "$utopia.2551.a$"
+synpolu.4.name: "$utopia.2551.name$"
+synpolu.4.desc: "$utopia.2551.desc$"
+synpolu.4.a: "$utopia.2551.a$"
+synpolu.5.name: "$utopia.2551.name$"
+synpolu.5.desc: "$utopia.2551.desc$"
+synpolu.5.a: "$utopia.2551.a$"

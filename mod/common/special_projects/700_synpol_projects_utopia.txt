@@ -22,8 +22,8 @@ special_project = {
 
 	on_success = {
 		event_target:flesh_weak_owner = {
-            # Calls synpolutopia.2 instead of utopia.2501
-			country_event = { id = synpolutopia.2 }
+            # Calls synpolu.2 instead of utopia.2501
+			country_event = { id = synpolu.2 }
 		}
 	}
 
@@ -54,8 +54,8 @@ special_project = {
 
 	on_success = {
 		event_target:synth_evo_owner = {
-            # Calls synpolutopia.4 instead of utopia.2551
-			country_event = { id = synpolutopia.4 }
+            # Calls synpolu.4 instead of utopia.2551
+			country_event = { id = synpolu.4 }
 		}
 	}
 
