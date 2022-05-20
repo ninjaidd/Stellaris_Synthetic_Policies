@@ -25,7 +25,7 @@ country_event = {
 	}
 }
 
-# Cybernetic Project Complete
+# Cybernetic Project Complete (Optional)
 # Replaces utopia.2501
 country_event = {
 	id = synpolu.2
@@ -362,12 +362,47 @@ country_event = {
 	}
 }
 
-# Synthetic Enable Project
-# Replaces utopia.2550
+# Cybernetic Project Complete (Discretionary)
 country_event = {
 	id = synpolu.3
 	title = "synpolu.3.name"
 	desc = "synpolu.3.desc"
+	picture = GFX_evt_cybernetics
+	show_sound = event_the_flesh_is_weak
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = flesh_weakened
+
+		synpol_create_cybernetic_species_mod_single = yes
+		last_created_species = { save_event_target_as = new_main_species }
+
+		change_dominant_species = { species = event_target:new_main_species }
+
+		observer_event = { id = observer.55 }
+		every_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = root }
+				has_communications = root
+			}
+			country_event = { id = utopia.2505 days = 5 }
+		}
+	}
+
+	option = {
+		name = "utopia.2501.a"
+		custom_tooltip = CYBORG_ASSIMILATION_CITIZENSHIP_ENABLED
+	}
+}
+
+# Synthetic Enable Project
+# Replaces utopia.2550
+country_event = {
+	id = synpolu.10
+	title = "synpolu.10.name"
+	desc = "synpolu.10.desc"
 	picture = GFX_evt_robot_assembly_plant
 	show_sound = event_laboratory_sound
 	trackable = yes
@@ -375,7 +410,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = "synpolu.3.a"
+		name = "synpolu.10.a"
 		hidden_effect = { save_event_target_as = synth_evo_owner }
 		capital_scope = {
 			enable_special_project = {
@@ -390,9 +425,9 @@ country_event = {
 # Synthetic Project Complete (Optional)
 # Replaces utopia.2551
 country_event = {
-	id = synpolu.4
-	title = "synpolu.4.name"
-	desc = "synpolu.4.desc"
+	id = synpolu.11
+	title = "synpolu.11.name"
+	desc = "synpolu.11.desc"
 	picture = GFX_evt_robot_assembly_plant
 	show_sound = event_synthetic_evolution
 
@@ -812,9 +847,9 @@ country_event = {
 # Synthetic Project Complete (Discretionary)
 # Replaces utopia.2551
 country_event = {
-	id = synpolu.5
-	title = "synpolu.5.name"
-	desc = "synpolu.5.desc"
+	id = synpolu.12
+	title = "synpolu.12.name"
+	desc = "synpolu.12.desc"
 	picture = GFX_evt_robot_assembly_plant
 	show_sound = event_synthetic_evolution
 
@@ -900,7 +935,7 @@ country_event = {
 		}
 		
 		#####
-		
+
 		if = {
 			limit = {
 				root.capital_scope = {

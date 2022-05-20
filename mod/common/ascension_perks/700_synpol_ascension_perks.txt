@@ -73,7 +73,7 @@ ap_the_flesh_is_weak = {
 }
 
 ###########################################################################
-## Copy of ap_synthetic_evolution but calls country event synpolu.3
+## Copy of ap_synthetic_evolution but calls country event synpolu.10
 ###########################################################################
 
 ap_synthetic_evolution = {
@@ -108,8 +108,8 @@ ap_synthetic_evolution = {
 		}
 		hidden_effect = {
 			##### START MODIFIED #####
-            # Calls synpolu.3 instead of utopia.2550
-			country_event = { id = synpolu.3 }
+            # Calls synpolu.10 instead of utopia.2550
+			country_event = { id = synpolu.10 }
 			##### END MODIFIED #####
 		}
 	}

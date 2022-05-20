@@ -22,8 +22,18 @@ special_project = {
 
 	on_success = {
 		event_target:flesh_weak_owner = {
-            # Calls synpolu.2 instead of utopia.2501
-			country_event = { id = synpolu.2 }
+			if = {
+				limit = { has_policy_flag = cybernetics_compulsory }
+				country_event = { id = utopia.2501 }
+			}
+			else_if = {
+				limit = { has_policy_flag = cybernetics_optional }
+				country_event = { id = synpolu.2 }
+			}
+			else_if = {
+				limit = { has_policy_flag = cybernetics_discretionary }
+				country_event = { id = synpolu.3 }
+			}
 		}
 	}
 
@@ -54,8 +64,18 @@ special_project = {
 
 	on_success = {
 		event_target:synth_evo_owner = {
-            # Calls synpolu.4 instead of utopia.2551
-			country_event = { id = synpolu.4 }
+			if = {
+				limit = { has_policy_flag = synthetics_compulsory }
+				country_event = { id = utopia.2551 }
+			}
+			else_if = {
+				limit = { has_policy_flag = synthetics_optional }
+				country_event = { id = synpolu.11 }
+			}
+			else_if = {
+				limit = { has_policy_flag = synthetics_discretionary }
+				country_event = { id = synpolu.12 }
+			}
 		}
 	}
 
