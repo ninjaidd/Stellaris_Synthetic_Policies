@@ -7,14 +7,6 @@ syn_pol_cybernetic_policy = {
         NOT = { has_country_flag = flesh_weakened }
 	}
 
-	option = {
-		name = "cybernetics_optional"
-
-		policy_flags = {
-			cybernetics_optional
-		}
-    }
-
     option = {
 		name = "cybernetics_discretionary"
 
@@ -23,6 +15,14 @@ syn_pol_cybernetic_policy = {
         }
 
 		ai_weight = { weight = 0 }
+    }
+
+	option = {
+		name = "cybernetics_optional"
+
+		policy_flags = {
+			cybernetics_optional
+		}
     }
 
     option = {
@@ -65,14 +65,6 @@ syn_pol_synthetic_policy = {
         NOT = { has_country_flag = synthetic_empire }
 	}
 
-	option = {
-		name = "synthetics_optional"
-
-		policy_flags = {
-			synthetics_optional
-		}
-    }
-
     option = {
 		name = "synthetics_discretionary"
 
@@ -81,6 +73,14 @@ syn_pol_synthetic_policy = {
         }
 
         ai_weight = { weight = 0 }
+    }
+
+    option = {
+		name = "synthetics_optional"
+
+		policy_flags = {
+			synthetics_optional
+		}
     }
 
     option = {
