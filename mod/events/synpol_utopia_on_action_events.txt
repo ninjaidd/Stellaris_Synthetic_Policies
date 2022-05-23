@@ -407,6 +407,9 @@ country_event = {
 		set_country_flag = synthetic_empire
 		if = {
 			limit = {
+				##### MECHOV INTEGRATION
+				NOT = { has_country_flag = mechov_ran }
+				#####
 				has_policy_flag = robots_outlawed
 			}
 			set_policy = {
@@ -472,6 +475,18 @@ country_event = {
 						}
 					}
 				}
+
+				##### MECHOV INTEGRATION
+				if = {
+					limit = {
+						root = { has_country_flag = mechov_ran }
+					}
+					change_species_characteristics = {
+						add_trait = trait_robot_synth
+					}
+					
+				}
+				#####
 
 				rename_species = {
 					prompt_country = root #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
@@ -830,6 +845,9 @@ country_event = {
 
 		if = {
 			limit = {
+				##### MECHOV INTEGRATION
+				NOT = { has_country_flag = mechov_ran }
+				#####
 				has_policy_flag = robots_outlawed
 			}
 			set_policy = {
@@ -896,6 +914,18 @@ country_event = {
 						}
 					}
 				}
+
+				##### MECHOV INTEGRATION
+				if = {
+					limit = {
+						root = { has_country_flag = mechov_ran }
+					}
+					change_species_characteristics = {
+						add_trait = trait_robot_synth
+					}
+					
+				}
+				#####
 
 				rename_species = {
 					prompt_country = root #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
