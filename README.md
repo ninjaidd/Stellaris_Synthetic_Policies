@@ -35,29 +35,13 @@ Not compatible with mods that change The Flesh is Weak or Synthetic Evolution as
 
 [b]Overwrites[/b]
 [list]
-  [*]ap_the_flesh_is_weak
-  [*]ap_synthetic_evolution
+  [*]FLESH_IS_WEAK_PROJECT
+  [*]SYNTHETIC_EVOLUTION_PROJECT
 [/list]
 ```
 
-# Overwrites & Replacements
+# Overwrites
 
-## Items
-
-common/ascension_perks/00_ascension_perks.txt
-- ap_the_flesh_is_weak
-- ap_synthetic_evolution
-
-## Special Projects
-
-common/special_projects/00_projects_utopia.txt
+common/special_projects/00_projects_utoa.txt
 - FLESH_IS_WEAK_PROJECT
 - SYNTHETIC_EVOLUTION_PROJECT
-
-## Events
-
-events/utopia_on_action_events.txt
-- utopia.2500
-- utopia.2501
-- utopia.2550
-- utopia.2551

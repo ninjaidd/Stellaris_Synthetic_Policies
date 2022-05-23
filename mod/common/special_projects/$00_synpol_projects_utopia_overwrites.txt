@@ -1,19 +1,18 @@
-# Replaces FLESH_IS_WEAK_PROJECT
 special_project = {
-	key = "SYN_POL_CYBERNETICS_PROJECT"
+	key = "FLESH_IS_WEAK_PROJECT"
 	cost = {
-		base = 1000
+		base = 500
 		scaled_modifier = {
 			limit = {
 			}
 			scope = this
-			add = 200
+			add = 100
 			calc = pop_count
 		}
 	}
 	tech_department = engineering_technology
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
-	picture = GFX_evt_robot_assembly_plant
+	picture = GFX_evt_cybernetics
 
 	event_scope = planet_event
 
@@ -21,7 +20,10 @@ special_project = {
 	}
 
 	on_success = {
+		# use event target so a capital-conquering country is not affected
 		event_target:flesh_weak_owner = {
+			##### START MODIFIED #####
+			# country_event = { id = utopia.2501 }
 			if = {
 				limit = { has_policy_flag = cybernetics_compulsory }
 				country_event = { id = utopia.2501 }
@@ -34,6 +36,7 @@ special_project = {
 				limit = { has_policy_flag = cybernetics_discretionary }
 				country_event = { id = synpolu.3 }
 			}
+			##### END MODIFIED #####
 		}
 	}
 
@@ -42,7 +45,7 @@ special_project = {
 }
 
 special_project = {
-	key = "SYN_POL_SYNTHETICS_PROJECT"
+	key = "SYNTHETIC_EVOLUTION_PROJECT"
 	cost = {
 		base = 1000
 		scaled_modifier = {
@@ -64,6 +67,8 @@ special_project = {
 
 	on_success = {
 		event_target:synth_evo_owner = {
+			##### START MODIFIED #####
+			# country_event = { id = utopia.2551 }
 			if = {
 				limit = { has_policy_flag = synthetics_compulsory }
 				country_event = { id = utopia.2551 }
@@ -76,6 +81,7 @@ special_project = {
 				limit = { has_policy_flag = synthetics_discretionary }
 				country_event = { id = synpolu.12 }
 			}
+			##### END MODIFIED #####
 		}
 	}
 

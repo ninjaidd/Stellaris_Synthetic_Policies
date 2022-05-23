@@ -1,32 +1,7 @@
 namespace = synpolu
 
-# Cybernetic Enable Project
-# Replaces utopia.2500
-country_event = {
-	id = synpolu.1
-	title = "synpolu.1.name"
-	desc = "synpolu.1.desc"
-	picture = GFX_evt_robot_assembly_plant
-	show_sound = event_laboratory_sound
-	trackable = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = "synpolu.1.a"
-		hidden_effect = { save_event_target_as = flesh_weak_owner }
-		capital_scope = {
-			enable_special_project = {
-				name = "SYN_POL_CYBERNETICS_PROJECT"
-				location = this
-				owner = root
-			}
-		}
-	}
-}
-
 # Cybernetic Project Complete (Optional)
-# Replaces utopia.2501
+# utopia.2501
 country_event = {
 	id = synpolu.2
 	title = "synpolu.2.name"
@@ -363,6 +338,7 @@ country_event = {
 }
 
 # Cybernetic Project Complete (Discretionary)
+# utopia.2501
 country_event = {
 	id = synpolu.3
 	title = "synpolu.3.name"
@@ -416,33 +392,8 @@ country_event = {
 	}
 }
 
-# Synthetic Enable Project
-# Replaces utopia.2550
-country_event = {
-	id = synpolu.10
-	title = "synpolu.10.name"
-	desc = "synpolu.10.desc"
-	picture = GFX_evt_robot_assembly_plant
-	show_sound = event_laboratory_sound
-	trackable = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = "synpolu.10.a"
-		hidden_effect = { save_event_target_as = synth_evo_owner }
-		capital_scope = {
-			enable_special_project = {
-				name = SYN_POL_SYNTHETICS_PROJECT
-				location = this
-				owner = root
-			}
-		}
-	}
-}
-
 # Synthetic Project Complete (Optional)
-# Replaces utopia.2551
+# utopia.2551
 country_event = {
 	id = synpolu.11
 	title = "synpolu.11.name"

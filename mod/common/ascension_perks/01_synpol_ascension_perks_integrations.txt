@@ -1,6 +1,0 @@
-# COMPAT Bionic
-ap_bioasc_bionic = {
-    possible = { always = no }
-
-    potential = { always = no }
-}

@@ -42,24 +42,7 @@ synthetics_compulsory: "Compulsory"
 synthetics_compulsory_name: "Synthetic Enhancement Compulsory"
 synthetics_compulsory_desc: "All eligible species must have their consciousness transfered into a synthetic avatar.\n\n§EWhen we complete the special project §Y$SYNTHETIC_EVOLUTION_PROJECT$§! all of our eligible species will be converted to a §Y$trait_mechanical$§! species.§!"
 
-##### SPECIAL PROJECTS
-
-## Cybernetic Projects
-
-SYN_POL_CYBERNETICS_PROJECT: "$FLESH_IS_WEAK_PROJECT$"
-SYN_POL_CYBERNETICS_PROJECT_DESC: "$FLESH_IS_WEAK_PROJECT_DESC$"
-
-## Synthetic Projects
-
-SYN_POL_SYNTHETICS_PROJECT: "$SYNTHETIC_EVOLUTION_PROJECT$"
-SYN_POL_SYNTHETICS_PROJECT_DESC: "$SYNTHETIC_EVOLUTION_PROJECT_DESC$"
-
 ##### EVENTS
-
-## Cybernetic Enable Project
-synpolu.1.name: "$utopia.2500.name$"
-synpolu.1.desc: "$utopia.2500.desc$"
-synpolu.1.a: "$utopia.2500.a$"
 
 ## Cybernetic Project Complete
 synpolu.2.name: "$utopia.2501.name$"
@@ -68,11 +51,6 @@ synpolu.2.a: "$utopia.2501.a$"
 synpolu.3.name: "$utopia.2501.name$"
 synpolu.3.desc: "$utopia.2501.desc$"
 synpolu.3.a: "$utopia.2501.a$"
-
-## Synthetic Enable Project
-synpolu.10.name: "$utopia.2550.name$"
-synpolu.10.desc: "$utopia.2550.desc$"
-synpolu.10.a: "$utopia.2550.a$"
 
 ## Synthetic Project Complete
 synpolu.11.name: "$utopia.2551.name$"
